@@ -20,6 +20,8 @@ RUN export PATH="/opt/poetry/bin:$PATH" && \
 
 FROM public.ecr.aws/lambda/python:3.10.2023.04.17.20
 
+RUN mkdir -p /opt/extensions
+
 COPY --from=deps "$LAMBDA_TASK_ROOT" "$LAMBDA_TASK_ROOT"
 
 COPY koinobori "$LAMBDA_TASK_ROOT/koinobori"
