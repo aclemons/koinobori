@@ -1,4 +1,3 @@
-import structlog
 from fastapi import FastAPI
 
 from koinobori.lambdas.api.builder import build

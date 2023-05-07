@@ -1,0 +1,16 @@
+---
+version: "3.9"
+services:
+  proxy:
+    image: koinobori-api-proxy
+    build:
+      dockerfile: docker/local-api-gateway/Dockerfile
+    ports: ['8000:8000']
+    environment:
+      - TARGET=lambda:8080
+  lambda:
+    image: koinobori
+    build:
+      dockerfile: docker/koinobori/Dockerfile
+    ports: ['8080:8080']
+    command: koinobori.lambdas.api.main.lambda_handler

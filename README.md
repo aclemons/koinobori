@@ -23,3 +23,12 @@ You can start running the dev server with:
     $ poetry run python3 koinobori/lambdas/api/local.py
 
 The swagger ui will now be accessible at http://127.0.0.1:8000/docs
+
+
+## Lambda Local
+
+You need docker compose to be installed. Then you can bring up the lambda and tiny proxy to forward normal HTTP requests to the lambda:
+
+    $ docker compose up --build
+
+The swagger ui will now be accessible at http://127.0.0.1:8000/docs
