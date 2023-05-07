@@ -1,6 +1,6 @@
 # koinobori
 
-An example FastAPI app.
+An example FastAPI app. 🎏
 
 ## Getting Started
 
