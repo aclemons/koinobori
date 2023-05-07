@@ -13,7 +13,7 @@ if any(
     os.environ.get(env_var) == f"{__name__}.lambda_handler"
     for env_var in ["_HANDLER", "ORIG_HANDLER"]
 ):
-    init_logging()
+    init_logging(mode="json")
 
     app = build()
 

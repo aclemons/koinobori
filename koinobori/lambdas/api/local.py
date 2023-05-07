@@ -5,7 +5,7 @@ from koinobori.utils.logging import init_logging
 
 
 def uvicorn_app() -> FastAPI:
-    init_logging()
+    init_logging(mode="console")
 
     return build()
 
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     import uvicorn
     from uvicorn.config import LOG_LEVELS
 
-    init_logging()
+    init_logging(mode="console")
 
     uvicorn.run(
         "koinobori.lambdas.api.local:uvicorn_app",

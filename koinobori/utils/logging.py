@@ -1,12 +1,10 @@
 import logging
+from typing import Literal
 
 import structlog
-from structlog.stdlib import BoundLogger
-from structlog.tracebacks import ExceptionDictTransformer
-from structlog.typing import ExceptionTransformer, ExcInfo, Processor
 
 
-def init_logging() -> None:
+def init_logging(mode: Literal["console", "json"] = "console") -> None:
     structlog.configure(
         processors=[structlog.stdlib.ProcessorFormatter.wrap_for_formatter],
         logger_factory=structlog.stdlib.LoggerFactory(),
@@ -18,10 +16,23 @@ def init_logging() -> None:
         structlog.processors.add_log_level,
         structlog.processors.TimeStamper(fmt="iso", utc=True),
         structlog.stdlib.ProcessorFormatter.remove_processors_meta,
-        structlog.processors.StackInfoRenderer(),
-        structlog.dev.set_exc_info,
-        structlog.dev.ConsoleRenderer(exception_formatter=structlog.dev.rich_traceback),
     ]
+
+    if mode == "console":
+        processors += [
+            structlog.processors.StackInfoRenderer(),
+            structlog.dev.set_exc_info,
+            structlog.dev.ConsoleRenderer(
+                exception_formatter=structlog.dev.rich_traceback
+            ),
+        ]
+    elif mode == "json":
+        processors += [
+            structlog.processors.dict_tracebacks,
+            structlog.processors.JSONRenderer(),
+        ]
+    else:
+        raise ValueError(f"Unknown mode {mode}")
 
     formatter = structlog.stdlib.ProcessorFormatter(processors=processors)
 
