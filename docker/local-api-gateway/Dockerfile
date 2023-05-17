@@ -1,1 +1,1 @@
-FROM bref/local-api-gateway@sha256:f2b66dc81fc03c753949d9221e9cf1504bcd449a1f69e4bb9c6d452498b1e180
+FROM bref/local-api-gateway@sha256:6dadb90d5ea4b12a7eb26601454bdd9d0d6f403809adff3ef8815dc3a8e8209a
