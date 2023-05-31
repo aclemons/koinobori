@@ -14,3 +14,17 @@ services:
       dockerfile: docker/koinobori/Dockerfile
     ports: ['8080:8080']
     command: koinobori.lambdas.api.main.lambda_handler
+  localstack:
+    image: localstack
+    build:
+      dockerfile: docker/localstack/Dockerfile
+    ports:
+      - "127.0.0.1:4566:4566"            # LocalStack Gateway
+      - "127.0.0.1:4510-4559:4510-4559"  # external services port range
+    environment:
+      - DEBUG=${DEBUG-}
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - EAGER_SERVICE_LOADING=1
+    volumes:
+      - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
