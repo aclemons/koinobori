@@ -23,7 +23,7 @@ def init_logging(mode: Literal["console", "json"] = "console") -> None:
             structlog.processors.StackInfoRenderer(),
             structlog.dev.set_exc_info,
             structlog.dev.ConsoleRenderer(
-                exception_formatter=structlog.dev.rich_traceback
+                exception_formatter=structlog.dev.rich_traceback,
             ),
         ]
     elif mode == "json":
@@ -32,7 +32,8 @@ def init_logging(mode: Literal["console", "json"] = "console") -> None:
             structlog.processors.JSONRenderer(),
         ]
     else:
-        raise ValueError(f"Unknown mode {mode}")
+        msg = f"Unknown mode {mode}"
+        raise ValueError(msg)
 
     formatter = structlog.stdlib.ProcessorFormatter(processors=processors)
 

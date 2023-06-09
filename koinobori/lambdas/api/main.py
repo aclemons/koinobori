@@ -17,7 +17,7 @@ if any(
 
     app = build()
 
-    def shutdown(signum: int, frame: FrameType | None) -> None:
+    def shutdown(_signum: int, _frame: FrameType | None) -> None:
         pass  # nothing to do for now
 
     loop = asyncio.get_event_loop()
