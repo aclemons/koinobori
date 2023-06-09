@@ -408,13 +408,13 @@ plugins = ["importlib-metadata"]
 
 [[package]]
 name = "pyright"
-version = "1.1.310"
+version = "1.1.313"
 description = "Command line wrapper for pyright"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "pyright-1.1.310-py3-none-any.whl", hash = "sha256:55995ac76bf56cb7a44193b7b1ffafc573abab1f1dbc9f62d327f2a1768b3bda"},
-    {file = "pyright-1.1.310.tar.gz", hash = "sha256:9e95335a678db2717eaa0c867d61f9399e916289f4a9f47d993e0df74e7d7391"},
+    {file = "pyright-1.1.313-py3-none-any.whl", hash = "sha256:1aeed72d5563e97461cb9d17847bfa918f7ec0cf79912bb3d2432fbe014daa23"},
+    {file = "pyright-1.1.313.tar.gz", hash = "sha256:95fa963337e2cfd4900601197d0f866d8c51732dea6c0bb12f962f92a79c77e3"},
 ]
 
 [package.dependencies]
@@ -821,4 +821,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10.11"
-content-hash = "b5cbca18028963dce64ccdd16102f0a30470823a464c1557d4d8e0a1e17e8c39"
+content-hash = "4dee86d82121ac98c6466a3b8667906f1ccbf680c3aaa49459725950b6acb27f"
