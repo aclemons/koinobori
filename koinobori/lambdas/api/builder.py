@@ -9,6 +9,7 @@ from koinobori.lambdas import api
 def build() -> FastAPI:
     app = FastAPI(
         docs_url=None,
+        openapi_url=None,
         title="koinobori API",
         description="WIP: 🎏",
         version=api.__version__,
@@ -20,7 +21,7 @@ def build() -> FastAPI:
     @app.get("/docs", include_in_schema=False)
     async def custom_swagger_ui_html() -> HTMLResponse:
         return get_swagger_ui_html(
-            openapi_url=app.openapi_url,
+            openapi_url="/openapi.json",
             title=app.title + " - Swagger UI",
             oauth2_redirect_url=app.swagger_ui_oauth2_redirect_url,
             swagger_js_url="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.0.0-alpha.13/swagger-ui-bundle.js",
