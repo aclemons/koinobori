@@ -12,7 +12,7 @@ fastapi = "^0.96.0"
 mangum = "^0.17.0"
 pydynamodb = "^0.5.0"
 python = "^3.10.11"
-sqlalchemy = "^1.4.48"
+sqlalchemy = "^2.0.15"
 structlog = "^23.1.0"
 
 [tool.poetry.group.dev.dependencies]
