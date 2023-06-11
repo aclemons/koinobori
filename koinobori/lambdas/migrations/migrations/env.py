@@ -5,6 +5,7 @@ if __name__ == "env_py":
     from alembic import context, ddl
     from sqlalchemy import pool
     from sqlalchemy.engine import create_engine
+    from yarl import URL
 
     ddl.impl._impls["dynamodb"] = ddl.impl.DefaultImpl  # noqa: SLF001
 
@@ -15,6 +16,30 @@ if __name__ == "env_py":
     config = context.config
 
     target_metadata = None
+
+    def get_aws_url() -> str:
+        custom_url = os.environ.get("AWS_URL", None)
+
+        if custom_url:
+            parsed = URL(custom_url)
+            aws_url = parsed.host
+
+            if parsed.port:
+                aws_url += f":{parsed.port}"
+
+            aws_url += "?region_name={region_name}&endpoint_url={custom_url}"
+            aws_url = aws_url.format(
+                region_name=os.environ["AWS_REGION"],
+                custom_url=custom_url,
+            )
+
+        else:
+            aws_url = "dynamodb.{region_name}.amazonaws.com:443"
+            aws_url = aws_url.format(region_name=os.environ["AWS_REGION"])
+
+        conn_str = "dynamodb://{aws_url}"
+
+        return conn_str.format(aws_url=aws_url)
 
     def run_migrations_offline() -> None:
         """Run migrations in 'offline' mode.
@@ -29,20 +54,8 @@ if __name__ == "env_py":
 
         """
 
-        aws_url = (
-            os.environ.get("AWS_URL", None)
-            or "dynamodb.{region_name}.amazonaws.com:443"
-        ).format(region_name=os.environ["AWS_REGION"])
-        conn_str = "dynamodb://{aws_url}"
-
-        url = conn_str.format(
-            aws_access_key_id=os.environ["AWS_ACCESS_KEY_ID"],
-            aws_secret_access_key=os.environ["AWS_SECRET_ACCESS_KEY"],
-            aws_url=aws_url,
-        )
-
         context.configure(
-            url=url,
+            url=get_aws_url(),
             target_metadata=target_metadata,
             literal_binds=True,
             dialect_opts={"paramstyle": "named"},
@@ -60,21 +73,11 @@ if __name__ == "env_py":
 
         """
 
-        logger.info("Running migrations")
+        url = get_aws_url()
 
-        aws_url = (
-            os.environ.get("AWS_URL", None)
-            or "dynamodb.{region_name}.amazonaws.com:443"
-        ).format(region_name=os.environ["AWS_REGION"])
-        conn_str = "dynamodb://{aws_url}"
+        logger.info("Running migrations", url=url)
 
-        conn_str = conn_str.format(
-            aws_access_key_id=os.environ["AWS_ACCESS_KEY_ID"],
-            aws_secret_access_key=os.environ["AWS_SECRET_ACCESS_KEY"],
-            aws_url=aws_url,
-        )
-
-        connectable = create_engine(conn_str, poolclass=pool.NullPool)
+        connectable = create_engine(url, poolclass=pool.NullPool)
 
         with connectable.connect() as connection:
             context.configure(

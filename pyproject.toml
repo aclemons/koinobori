@@ -15,6 +15,7 @@ mangum = "0.17.0"
 pydynamodb = "0.5.0"
 sqlalchemy = "1.4.48"
 structlog = "23.1.0"
+yarl = "1.9.2"
 
 [tool.poetry.group.dev.dependencies]
 black = "23.3.0"

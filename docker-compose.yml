@@ -3,15 +3,9 @@ version: "3.9"
 services:
   proxy:
     image: bref/local-api-gateway@sha256:6dadb90d5ea4b12a7eb26601454bdd9d0d6f403809adff3ef8815dc3a8e8209a
-    ports: ['8000:8000']
+    ports: ['127.0.0.1:8000:8000']
     environment:
       - TARGET=lambda:8080
-  lambda:
-    image: koinobori
-    build:
-      dockerfile: docker/koinobori/Dockerfile
-    ports: ['8080:8080']
-    command: koinobori.lambdas.api.main.lambda_handler
   localstack:
     image: localstack/localstack:2.1.0@sha256:74c3cb7cfa3d8a8ea9e786c0974dddf6ea60e7cea91e7a739f93cecafc09a9e2
     ports:
@@ -21,6 +15,29 @@ services:
       - DEBUG=${DEBUG-}
       - DOCKER_HOST=unix:///var/run/docker.sock
       - EAGER_SERVICE_LOADING=1
+      - SERVICES=dynamodb
     volumes:
-      - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
+  lambda:
+    image: koinobori/dev:latest
+    build:
+      dockerfile: docker/koinobori/Dockerfile
+    ports: ['127.0.0.1:9001:8080']
+    command: koinobori.lambdas.api.main.lambda_handler
+    environment:
+      - AWS_REGION=eu-central-1
+      - AWS_ACCESS_KEY_ID=dummy
+      - AWS_SECRET_ACCESS_KEY=dummy
+      - AWS_URL=http://localstack:4566
+  migrations:
+    image: koinobori/dev:latest
+    build:
+      dockerfile: docker/koinobori/Dockerfile
+    ports: ['127.0.0.1:9002:8080']
+    command: koinobori.lambdas.migrations.main.lambda_handler
+    environment:
+      - AWS_REGION=eu-central-1
+      - AWS_ACCESS_KEY_ID=dummy
+      - AWS_SECRET_ACCESS_KEY=dummy
+      - ALEMBIC_VERSION_TABLE=koinobori-local-migrations
+      - AWS_URL=http://localstack:4566

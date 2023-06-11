@@ -32,3 +32,16 @@ You need docker compose to be installed. Then you can bring up the lambda and ti
     $ docker compose up --build
 
 The swagger ui will now be accessible at http://127.0.0.1:8000/docs
+
+## Migrations
+
+You need to create your local table in dynamodb. If you have started your local containers with docker compose as above, you can use something like [ddbsh](https://github.com/awslabs/dynamodb-shell):
+
+    $ DDBSH_ENDPOINT_OVERRIDE=http://localhost:4566 AWS_DEFAULT_REGION=eu-central-1 ddbsh
+    ddbsh - version 0.6.1
+    eu-central-1 (*)> create table koinobori-local-migrations(version_num string) primary key (version_num hash);
+    CREATE
+
+You can invoke the migrations lambda with:
+
+    $ curl "http://localhost:9002/2015-03-31/functions/function/invocations" -d '{}'
