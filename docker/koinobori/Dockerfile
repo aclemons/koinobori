@@ -1,4 +1,6 @@
-FROM public.ecr.aws/lambda/python:3.10.2023.05.29.18 as deps
+FROM public.ecr.aws/lambda/python:3.10.2023.05.29.18@sha256:70b056503bffcc49eefe22897782393a984efa04be670dfd7aec1351bea6717d as base
+
+FROM base as deps
 
 WORKDIR /tmp
 
@@ -18,7 +20,7 @@ RUN export PATH="/opt/poetry/bin:$PATH" && \
     rm pyproject.toml poetry.lock
 
 
-FROM public.ecr.aws/lambda/python:3.10.2023.05.29.18
+FROM base
 
 RUN mkdir -p /opt/extensions
 

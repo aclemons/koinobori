@@ -1,5 +1,3 @@
-
-
 if __name__ == "env_py":
     import os
 
@@ -11,7 +9,6 @@ if __name__ == "env_py":
     ddl.impl._impls["dynamodb"] = ddl.impl.DefaultImpl  # noqa: SLF001
 
     logger = structlog.stdlib.get_logger(__name__)
-
 
     # this is the Alembic Config object, which provides
     # access to the values within the .ini file in use.
@@ -32,10 +29,17 @@ if __name__ == "env_py":
 
         """
 
-        aws_url = (os.environ.get("AWS_URL", None) or "dynamodb.{region_name}.amazonaws.com:443").format(region_name=os.environ["AWS_REGION"])
+        aws_url = (
+            os.environ.get("AWS_URL", None)
+            or "dynamodb.{region_name}.amazonaws.com:443"
+        ).format(region_name=os.environ["AWS_REGION"])
         conn_str = "dynamodb://{aws_url}"
 
-        url = conn_str.format(aws_access_key_id=os.environ["AWS_ACCESS_KEY_ID"], aws_secret_access_key=os.environ["AWS_SECRET_ACCESS_KEY"], aws_url=aws_url)
+        url = conn_str.format(
+            aws_access_key_id=os.environ["AWS_ACCESS_KEY_ID"],
+            aws_secret_access_key=os.environ["AWS_SECRET_ACCESS_KEY"],
+            aws_url=aws_url,
+        )
 
         context.configure(
             url=url,
@@ -58,15 +62,26 @@ if __name__ == "env_py":
 
         logger.info("Running migrations")
 
-        aws_url = (os.environ.get("AWS_URL", None) or "dynamodb.{region_name}.amazonaws.com:443").format(region_name=os.environ["AWS_REGION"])
+        aws_url = (
+            os.environ.get("AWS_URL", None)
+            or "dynamodb.{region_name}.amazonaws.com:443"
+        ).format(region_name=os.environ["AWS_REGION"])
         conn_str = "dynamodb://{aws_url}"
 
-        conn_str = conn_str.format(aws_access_key_id=os.environ["AWS_ACCESS_KEY_ID"], aws_secret_access_key=os.environ["AWS_SECRET_ACCESS_KEY"], aws_url=aws_url)
+        conn_str = conn_str.format(
+            aws_access_key_id=os.environ["AWS_ACCESS_KEY_ID"],
+            aws_secret_access_key=os.environ["AWS_SECRET_ACCESS_KEY"],
+            aws_url=aws_url,
+        )
 
         connectable = create_engine(conn_str, poolclass=pool.NullPool)
 
         with connectable.connect() as connection:
-            context.configure(connection=connection, target_metadata=target_metadata, version_table=os.environ["ALEMBIC_VERSION_TABLE"])
+            context.configure(
+                connection=connection,
+                target_metadata=target_metadata,
+                version_table=os.environ["ALEMBIC_VERSION_TABLE"],
+            )
 
             with context.begin_transaction():
                 context.run_migrations()

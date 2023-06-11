@@ -24,7 +24,8 @@ if any(
     def lambda_handler(_event: LambdaEvent, _context: LambdaContext) -> dict:
         config = Config()
         config.set_main_option(
-            "script_location", "koinobori.lambdas.migrations:migrations",
+            "script_location",
+            "koinobori.lambdas.migrations:migrations",
         )
 
         command.upgrade(config, revision="heads")
