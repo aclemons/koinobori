@@ -1,6 +1,36 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base"
-  ]
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:base",
+        "helpers:pinGitHubActionDigests"
+    ],
+    "packageRules": [
+        {
+            "description": "Exclude our docker image from docker-compose updates.",
+            "matchManagers": [
+                "docker-compose"
+            ],
+            "matchPackageNames": [
+                "aclemons/koinobori"
+            ],
+            "enabled": false
+        },
+        {
+            "description": "`.python-version` is synced to the AWS lambda docker image version.",
+            "enabled": false,
+            "matchManagers": [
+                "pyenv"
+            ]
+        },
+        {
+            "description": "Pin poetry managed versions",
+            "matchManagers": [
+                "poetry"
+            ],
+            "rangeStrategy": "pin"
+        }
+    ],
+    "schedule": [
+        "before 4am"
+    ]
 }
