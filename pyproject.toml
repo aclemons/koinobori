@@ -7,21 +7,21 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-alembic = "^1.11.1"
-fastapi = "^0.96.0"
-mangum = "^0.17.0"
-pydynamodb = "^0.5.0"
+alembic = "1.11.1"
+fastapi = "0.96.0"
+mangum = "0.17.0"
+pydynamodb = "0.5.0"
 python = "^3.10.11"
-sqlalchemy = "^1.4.48"
-structlog = "^23.1.0"
+sqlalchemy = "1.4.48"
+structlog = "23.1.0"
 
 [tool.poetry.group.dev.dependencies]
-black = "^23.3.0"
-pyright = "^1.1.313"
-pytest = "^7.3.1"
-rich = "^13.4.1"
-ruff = "^0.0.272"
-uvicorn = {version = "^0.22.0", extras = ["standard"]}
+black = "23.3.0"
+pyright = "1.1.313"
+pytest = "7.3.1"
+rich = "13.4.1"
+ruff = "0.0.272"
+uvicorn = {version = "0.22.0", extras = ["standard"]}
 
 [build-system]
 requires = ["poetry-core"]
