@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import pytest
+import tomllib
 
 import docker
 
@@ -11,6 +12,16 @@ def dot_python_version() -> str:
 
     with python_version_file.open() as f:
         return f.readline().rstrip()
+
+
+@pytest.fixture()
+def pyproject_toml_python_version() -> str:
+    pyproject_toml = Path(__file__).parent.parent / "pyproject.toml"
+
+    with pyproject_toml.open() as f:
+        data = tomllib.loads(f.read())
+
+        return data["tool"]["poetry"]["dependencies"]["python"]
 
 
 @pytest.fixture()
@@ -62,6 +73,8 @@ def test_python_versions_match(
     dot_python_version: str,
     docker_python_version: str,
     readme_python_version: str,
+    pyproject_toml_python_version: str,
 ) -> None:
     assert dot_python_version == docker_python_version
     assert dot_python_version == readme_python_version
+    assert dot_python_version == pyproject_toml_python_version
