@@ -22,6 +22,7 @@ if __name__ == "env_py":
 
         if custom_url:
             parsed = URL(custom_url)
+            assert parsed.host
             aws_url = parsed.host
 
             if parsed.port:
