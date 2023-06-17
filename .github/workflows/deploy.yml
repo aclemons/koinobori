@@ -9,7 +9,7 @@ name: Build and push docker image
 jobs:
   docker:
     name: Build and push
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     permissions:
       packages: write
