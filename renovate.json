@@ -35,10 +35,9 @@
             "fileMatch": [
                 "^koinobori\\/lambdas\\/api\\/builder\\.py$"
             ],
-            "matchStrings": [
-                "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sSWAGGER_UI_VERSION = \"(?<currentValue>.*)\"\\s"
-            ],
-            "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+            "matchStrings": [ "SWAGGER_UI_VERSION = \"(?<currentValue>.*)\"\\n" ],
+            "depNameTemplate": "swagger-ui-dist",
+            "datasourceTemplate": "npm"
         },
         {
             "fileMatch": [
