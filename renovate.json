@@ -35,9 +35,22 @@
             "fileMatch": [
                 "^koinobori\\/lambdas\\/api\\/builder\\.py$"
             ],
-            "matchStrings": [ "SWAGGER_UI_VERSION = \"(?<currentValue>.*)\"\\n" ],
+            "matchStrings": [
+                "SWAGGER_UI_VERSION = \"(?<currentValue>.*)\"\\n"
+            ],
             "depNameTemplate": "swagger-ui-dist",
             "datasourceTemplate": "npm"
+        },
+        {
+            "fileMatch": [
+                "^README\\.md"
+            ],
+            "matchStrings": [
+                "and Poetry (?<currentValue>.*)\\.\\n",
+                "POETRY_VERSION=(?<currentValue>.*) python3 "
+            ],
+            "depNameTemplate": "python-poetry/poetry",
+            "datasourceTemplate": "github-releases"
         },
         {
             "fileMatch": [
