@@ -5,6 +5,8 @@ from starlette.responses import HTMLResponse
 
 from koinobori.lambdas import api
 
+# renovate: datasource=npm depName=swagger-ui-dist versioning=npm
+SWAGGER_UI_VERSION = "5.0.0-alpha.13"
 
 def build() -> FastAPI:
     app = FastAPI(
@@ -24,8 +26,8 @@ def build() -> FastAPI:
             openapi_url="/openapi.json",
             title=app.title + " - Swagger UI",
             oauth2_redirect_url=app.swagger_ui_oauth2_redirect_url,
-            swagger_js_url="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.0.0-alpha.13/swagger-ui-bundle.js",
-            swagger_css_url="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.0.0-alpha.13/swagger-ui.css",
+            swagger_js_url=f"https://cdn.jsdelivr.net/npm/swagger-ui-dist@{SWAGGER_UI_VERSION}/swagger-ui-bundle.js",
+            swagger_css_url=f"https://cdn.jsdelivr.net/npm/swagger-ui-dist@{SWAGGER_UI_VERSION}/swagger-ui.css",
         )
 
     @app.get("/v1/ping", response_class=PlainTextResponse)

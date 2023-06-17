@@ -30,7 +30,15 @@
             "rangeStrategy": "pin"
         }
     ],
-    "schedule": [
-        "before 4am"
+    "regexManagers": [
+      {
+        "fileMatch": [
+          "^builder.py"
+        ],
+        "matchStrings": [
+          "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sSWAGGER_UI_VERSION = \"(?<currentValue>.*)\"\\s"
+        ],
+        "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+      }
     ]
 }
