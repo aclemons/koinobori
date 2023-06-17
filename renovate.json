@@ -33,7 +33,7 @@
     "regexManagers": [
       {
         "fileMatch": [
-          "^builder.py"
+          "^koinobori\\/lambdas\\/api\\/builder\\.py$"
         ],
         "matchStrings": [
           "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sSWAGGER_UI_VERSION = \"(?<currentValue>.*)\"\\s"
