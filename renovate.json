@@ -31,27 +31,27 @@
         }
     ],
     "regexManagers": [
-      {
-        "fileMatch": [
-          "^koinobori\\/lambdas\\/api\\/builder\\.py$"
-        ],
-        "matchStrings": [
-          "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sSWAGGER_UI_VERSION = \"(?<currentValue>.*)\"\\s"
-        ],
-        "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
-      },
-      {
-        "fileMatch": [
-          "^(workflow-templates|\\.github\\/workflows)\\/[^/]+\\.[Yy][Aa]?[Mm][Ll]$",
-          "(^|\\/)action\\.[Yy][Aa]?[Mm][Ll]$"
-        ],
-        "matchStrings": [
-            "ubuntu-(?<currentValue>\\d\\d)\\.04"
-        ],
-        "depNameTemplate": "github actions runner ubuntu",
-        "packageNameTemplate": "actions/runner-images",
-        "datasourceTemplate": "github-releases",
-        "versioningTemplate": "docker"
-      }
+        {
+            "fileMatch": [
+                "^koinobori\\/lambdas\\/api\\/builder\\.py$"
+            ],
+            "matchStrings": [
+                "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sSWAGGER_UI_VERSION = \"(?<currentValue>.*)\"\\s"
+            ],
+            "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+        },
+        {
+            "fileMatch": [
+                "^(workflow-templates|\\.github\\/workflows)\\/[^/]+\\.[Yy][Aa]?[Mm][Ll]$",
+                "(^|\\/)action\\.[Yy][Aa]?[Mm][Ll]$"
+            ],
+            "matchStrings": [
+                "ubuntu-(?<currentValue>\\d\\d)\\.04"
+            ],
+            "depNameTemplate": "github actions runner ubuntu",
+            "packageNameTemplate": "actions/runner-images",
+            "datasourceTemplate": "github-releases",
+            "versioningTemplate": "docker"
+        }
     ]
 }
