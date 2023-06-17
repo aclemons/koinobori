@@ -6,7 +6,7 @@ from starlette.responses import HTMLResponse
 from koinobori.lambdas import api
 
 # renovate: datasource=npm depName=swagger-ui-dist versioning=npm
-SWAGGER_UI_VERSION = "5.0.0-alpha.13"
+SWAGGER_UI_VERSION = "5.0.0"
 
 def build() -> FastAPI:
     app = FastAPI(
