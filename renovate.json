@@ -28,6 +28,15 @@
                 "poetry"
             ],
             "rangeStrategy": "pin"
+        },
+        {
+            "matchDatasources": [
+                "docker"
+            ],
+            "matchPackageNames": [
+                "public.ecr.aws/lambda/python"
+            ],
+            "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)(?:-(?<prerelease>preview))?\\.(?<patch>\\d+).(?<build>\\d+).(?<revision>\\d+)(?:[\\w.]+)?(?:-(?<compatibility>\\w+))?$"
         }
     ],
     "regexManagers": [
