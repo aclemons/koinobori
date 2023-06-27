@@ -74,5 +74,8 @@
             "datasourceTemplate": "github-releases",
             "versioningTemplate": "docker"
         }
-    ]
+    ],
+    "docker": {
+        "pinDigests": true
+    }
 }
