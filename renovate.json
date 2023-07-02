@@ -42,16 +42,6 @@
     "regexManagers": [
         {
             "fileMatch": [
-                "^koinobori\\/lambdas\\/api\\/builder\\.py$"
-            ],
-            "matchStrings": [
-                "SWAGGER_UI_VERSION = \"(?<currentValue>.*)\"\\n"
-            ],
-            "depNameTemplate": "swagger-ui-dist",
-            "datasourceTemplate": "npm"
-        },
-        {
-            "fileMatch": [
                 "^README\\.md"
             ],
             "matchStrings": [

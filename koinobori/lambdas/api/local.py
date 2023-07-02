@@ -15,6 +15,7 @@ if __name__ == "__main__":
     from uvicorn.config import LOG_LEVELS
 
     init_logging(mode="console")
+    init_logging()
 
     uvicorn.run(
         "koinobori.lambdas.api.local:uvicorn_app",
