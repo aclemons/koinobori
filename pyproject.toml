@@ -13,7 +13,7 @@ alembic = "1.11.1"
 fastapi = "0.99.1"
 mangum = "0.17.0"
 pydynamodb = "0.5.0"
-sqlalchemy = "1.4.48"
+sqlalchemy = "1.4.49"
 structlog = "23.1.0"
 yarl = "1.9.2"
 
