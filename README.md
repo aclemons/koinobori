@@ -4,7 +4,7 @@ An example FastAPI app. 🎏
 
 ## Getting Started
 
-You need Python 3.11.3 and Poetry 1.5.1.
+You need Python 3.11.4 and Poetry 1.5.1.
 
 - `pyenv` is the simplest way to manage your python versions.
   - `pyenv install "$(cat .python-version)"`
