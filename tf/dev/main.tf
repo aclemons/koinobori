@@ -74,7 +74,7 @@ resource "aws_ecr_repository" "koinobori" {
 }
 
 resource "aws_cloudwatch_log_group" "api_lambda" {
-  name = "/aws/lambda/${local.project_name}/${local.env}/api"
+  name = "/aws/lambda/${local.api_function_name}"
 
   tags = {
     Project = local.project_name
@@ -123,7 +123,7 @@ resource "aws_dynamodb_table" "migrations" {
 }
 
 resource "aws_cloudwatch_log_group" "migrations_lambda" {
-  name = "/aws/lambda/${local.project_name}/${local.env}/migrations"
+  name = "/aws/lambda/${local.migrations_table_name}"
 
   tags = {
     Project = local.project_name
