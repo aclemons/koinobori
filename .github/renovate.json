@@ -5,16 +5,12 @@
         "helpers:pinGitHubActionDigests",
         ":maintainLockFilesMonthly"
     ],
-
     "separateMinorPatch": true,
     "separateMajorMinor": true,
-    "separateMajorMinor": true,
     "ignoreTests": false,
-
     "docker": {
         "pinDigests": true
     },
-
     "packageRules": [
         {
             "description": "Exclude our docker image from docker-compose updates.",
@@ -75,8 +71,5 @@
             "datasourceTemplate": "github-releases",
             "versioningTemplate": "docker"
         }
-    ],
-    "docker": {
-        "pinDigests": true
-    }
+    ]
 }
