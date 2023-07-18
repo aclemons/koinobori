@@ -24,7 +24,7 @@ pyright = "1.1.317"
 pytest = "7.4.0"
 rich = "13.4.2"
 ruff = "0.0.278"
-uvicorn = {version = "0.23.0", extras = ["standard"]}
+uvicorn = {version = "0.23.1", extras = ["standard"]}
 
 [build-system]
 requires = ["poetry-core"]
