@@ -476,20 +476,6 @@ lingua = ["lingua"]
 testing = ["pytest"]
 
 [[package]]
-name = "mangum"
-version = "0.17.0"
-description = "AWS Lambda support for ASGI applications"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "mangum-0.17.0-py3-none-any.whl", hash = "sha256:f00be705605bc4793958df62e4d249abf58d254c39d90bb410d069570206f4a2"},
-    {file = "mangum-0.17.0.tar.gz", hash = "sha256:5b4e26375e12eed051687670466d17968f8b74beecaca432edd4eb4127f78509"},
-]
-
-[package.dependencies]
-typing-extensions = "*"
-
-[[package]]
 name = "markdown-it-py"
 version = "3.0.0"
 description = "Python port of markdown-it. Markdown parsing, done right!"
@@ -890,6 +876,7 @@ files = [
 boto3 = ">=1.21.0"
 botocore = ">=1.24.7"
 pyparsing = ">=3.0.0"
+sqlalchemy = {version = ">=1.0.0,<2.0.0", optional = true, markers = "extra == \"sqlalchemy\""}
 tenacity = ">=4.1.0"
 
 [package.extras]
@@ -1615,4 +1602,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.4"
-content-hash = "7ef3e6f34f35a2c3203e69ffd4c45a77d4d2c3212690f25b8c5069a3326dd62b"
+content-hash = "6a70867bfcb312766abe63421e54b29988cd45e57e76cdea2de1465131fd00fd"
