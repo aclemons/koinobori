@@ -12,7 +12,7 @@ python = "3.11.4"
 alembic = "1.11.1"
 fastapi = "0.100.0"
 pydynamodb = {extras = ["sqlalchemy"], version = "0.5.0"}
-sqlalchemy = "1.4.49"
+sqlalchemy = "2.0.19"
 structlog = "23.1.0"
 yarl = "1.9.2"
 
