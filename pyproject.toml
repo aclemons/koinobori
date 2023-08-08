@@ -22,7 +22,7 @@ docker = "6.1.3"
 pyright = "1.1.320"
 pytest = "7.4.0"
 rich = "13.5.2"
-ruff = "0.0.282"
+ruff = "0.0.283"
 uvicorn = {version = "0.23.2", extras = ["standard"]}
 
 [build-system]
