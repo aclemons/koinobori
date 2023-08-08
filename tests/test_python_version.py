@@ -42,7 +42,7 @@ def readme_python_version() -> str:
 
 @pytest.fixture()
 def docker_python_version() -> str:
-    dockerfile = Path(".") / "docker" / "koinobori" / "Dockerfile"
+    dockerfile = Path() / "docker" / "koinobori" / "Dockerfile"
 
     image_name = "public.ecr.aws/lambda/python"
     with dockerfile.open() as f:
