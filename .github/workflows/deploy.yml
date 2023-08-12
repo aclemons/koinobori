@@ -6,16 +6,25 @@ name: Build and push docker image
   push:
     branches: master
 
+env:
+  AWS_DEFAULT_REGION: eu-central-1
+  SESSION_DURATION: 900
+
 jobs:
   docker:
     name: Build and push
     runs-on: ubuntu-22.04
-
     permissions:
+      id-token: write
+      contents: read
       packages: write
 
     steps:
       - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+
+      - name: Compute git sha
+        run:
+          echo "DOCKER_IMAGE_VERSION=git$(git rev-parse --short HEAD)" >> "$GITHUB_ENV"
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2.2.0
@@ -30,6 +39,18 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ github.token }}
 
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@5fd3084fc36e372ff1fff382a39b10d03659f355 # v2.2.0
+        with:
+          aws-region: ${{ env.AWS_DEFAULT_REGION }}
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/koinobori-automation
+          role-duration-seconds: ${{ env.SESSION_DURATION }}
+
+      - name: Login to Amazon ECR
+        uses: aws-actions/amazon-ecr-login@2fc7aceee09e9e4a7105c0d060c656fad0b4f63d # v1.7.0
+        with:
+          mask-password: 'true'
+
       - name: Build and push
         uses: docker/build-push-action@2eb1c1961a95fc15694676618e422e8ba1d63825 # v4.1.1
         with:
@@ -39,5 +60,9 @@ jobs:
           cache-to: type=gha,mode=max
           context: .
           file: docker/koinobori/Dockerfile
+          provenance: false
           tags: |
             ghcr.io/${{ github.repository_owner }}/koinobori:latest
+            ghcr.io/${{ github.repository_owner }}/koinobori:${{ env.DOCKER_IMAGE_VERSION }}
+            ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/koinobori/dev:latest
+            ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/koinobori/dev:${{ env.DOCKER_IMAGE_VERSION }}
