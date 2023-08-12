@@ -88,9 +88,11 @@ resource "aws_lambda_function" "api_lambda" {
   role          = aws_iam_role.iam_for_lambda.arn
 
   package_type = "Image"
-  image_uri    = "${aws_ecr_repository.koinobori.repository_url}:latest"
+  image_uri    = "${aws_ecr_repository.koinobori.repository_url}:${var.docker_image_version}"
 
   timeout = 30
+
+  architectures = ["arm64"]
 
   image_config {
     command = ["koinobori.lambdas.api.main.lambda_handler"]
@@ -137,9 +139,11 @@ resource "aws_lambda_function" "migrations_lambda" {
   role          = aws_iam_role.iam_for_lambda.arn
 
   package_type = "Image"
-  image_uri    = "${aws_ecr_repository.koinobori.repository_url}:latest"
+  image_uri    = "${aws_ecr_repository.koinobori.repository_url}:${var.docker_image_version}"
 
   timeout = 30
+
+  architectures = ["arm64"]
 
   environment {
     variables = {
