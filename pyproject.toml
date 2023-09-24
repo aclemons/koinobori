@@ -24,6 +24,7 @@ pyright = "1.1.327"
 pytest = "7.4.2"
 rich = "13.5.3"
 ruff = "0.0.291"
+ruff-lsp = "0.0.39"
 uvicorn = {version = "0.23.2", extras = ["standard"]}
 
 [build-system]
