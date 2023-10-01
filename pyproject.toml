@@ -22,7 +22,7 @@ black = "23.9.1"
 docker = "6.1.3"
 pyright = "1.1.329"
 pytest = "7.4.2"
-rich = "13.5.3"
+rich = "13.6.0"
 ruff = "0.0.291"
 ruff-lsp = "0.0.39"
 uvicorn = {version = "0.23.2", extras = ["standard"]}
