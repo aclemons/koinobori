@@ -14,7 +14,7 @@ fastapi = "0.103.2"
 mangum = "0.17.0"
 pydynamodb = {extras = ["sqlalchemy"], version = "0.5.4"}
 sqlalchemy = "1.4.49"
-structlog = "23.1.0"
+structlog = "23.2.0"
 yarl = "1.9.2"
 
 [tool.poetry.group.dev.dependencies]
