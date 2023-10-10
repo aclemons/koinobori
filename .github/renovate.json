@@ -34,8 +34,9 @@
     "enabled": true
   },
   "rangeStrategy": "pin",
-  "regexManagers": [
+  "customManagers": [
     {
+      "customType": "regex",
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "python-poetry/poetry",
       "fileMatch": [
