@@ -1,28 +1,28 @@
 ---
-version: "3.9"
+version: '3.9'
 services:
   proxy:
     image: bref/local-api-gateway:latest@sha256:cd1aa1f0d018a44003c3f7dda7bc3fb6d59782a95484210117230583b23c66ad
-    ports: ['127.0.0.1:8000:8000']
+    ports: [127.0.0.1:8000:8000]
     environment:
       - TARGET=lambda:8080
   localstack:
     image: localstack/localstack:2.3.2@sha256:c396d899a3cdc038ba6bb82d54a40f12c037004b93c3e1efc4c821db60306f79
     ports:
-      - "127.0.0.1:4566:4566"            # LocalStack Gateway
-      - "127.0.0.1:4510-4559:4510-4559"  # external services port range
+      - 127.0.0.1:4566:4566              # LocalStack Gateway
+      - 127.0.0.1:4510-4559:4510-4559    # external services port range
     environment:
       - DEBUG=${DEBUG-}
       - DOCKER_HOST=unix:///var/run/docker.sock
       - EAGER_SERVICE_LOADING=1
       - SERVICES=dynamodb
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
+      - /var/run/docker.sock:/var/run/docker.sock
   lambda:
     image: koinobori/dev:latest
     build:
       dockerfile: docker/koinobori/Dockerfile
-    ports: ['127.0.0.1:9001:8080']
+    ports: [127.0.0.1:9001:8080]
     command: koinobori.lambdas.api.main.lambda_handler
     environment:
       - AWS_REGION=eu-central-1
@@ -33,7 +33,7 @@ services:
     image: koinobori/dev:latest
     build:
       dockerfile: docker/koinobori/Dockerfile
-    ports: ['127.0.0.1:9002:8080']
+    ports: [127.0.0.1:9002:8080]
     command: koinobori.lambdas.migrations.main.lambda_handler
     environment:
       - AWS_REGION=eu-central-1

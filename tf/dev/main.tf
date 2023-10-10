@@ -164,4 +164,3 @@ resource "aws_lambda_function" "migrations_lambda" {
     aws_cloudwatch_log_group.migrations_lambda,
   ]
 }
-
