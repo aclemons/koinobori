@@ -45,7 +45,8 @@
       ],
       "matchStrings": [
         "and Poetry (?<currentValue>.*)\\.\\n",
-        "export POETRY_VERSION=(?<currentValue>.*) &&"
+        "export POETRY_VERSION=(?<currentValue>.*) &&",
+        "POETRY_VERSION=(?<currentValue>.*) python3"
       ]
     }
   ],
