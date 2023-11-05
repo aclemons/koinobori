@@ -66,8 +66,11 @@ jobs:
             ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/koinobori/dev:latest
             ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/koinobori/dev:${{ env.DOCKER_IMAGE_VERSION }}
 
-      - name: Updated lambda
+      - name: Update lambdas
         run: |
             aws lambda update-function-code --function-name koinobori-dev-api --image-uri ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/koinobori/dev:latest
+            aws lambda update-function-code --function-name koinobori-dev-migrations --image-uri ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/koinobori/dev:latest
+
             aws lambda wait function-active --function-name koinobori-dev-api
+            aws lambda wait function-active --function-name koinobori-dev-migrations
 
