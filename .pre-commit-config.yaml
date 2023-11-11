@@ -19,6 +19,28 @@ repos:
       - id: yamlfmt
         args: [--mapping, '2', --sequence, '4', --offset, '2', --width, '150']
 
+  - repo: local
+    hooks:
+      - id: ruff-lint
+        name: ruff-lint
+        entry: poetry run ruff --fix --exit-non-zero-on-fix --force-exclude
+        language: python
+        require_serial: true
+        args: []
+        types_or: [python, pyi]
+        additional_dependencies: []
+
+  - repo: local
+    hooks:
+      - id: ruff-format
+        name: ruff-format
+        entry: poetry run ruff format --force-exclude
+        language: python
+        require_serial: true
+        args: []
+        types_or: [python, pyi]
+        additional_dependencies: []
+
   - repo: https://github.com/koalaman/shellcheck-precommit
     rev: v0.9.0
     hooks:

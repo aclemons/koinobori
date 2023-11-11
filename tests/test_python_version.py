@@ -1,7 +1,7 @@
+import tomllib
 from pathlib import Path
 
 import pytest
-import tomllib
 
 import docker
 

@@ -3,7 +3,8 @@ version: '3.9'
 services:
   proxy:
     image: bref/local-api-gateway:latest@sha256:cd1aa1f0d018a44003c3f7dda7bc3fb6d59782a95484210117230583b23c66ad
-    ports: [127.0.0.1:8000:8000]
+    ports:
+      - 127.0.0.1:8000:8000
     environment:
       - TARGET=lambda:8080
   localstack:
@@ -22,7 +23,8 @@ services:
     image: koinobori/dev:latest
     build:
       dockerfile: docker/koinobori/Dockerfile
-    ports: [127.0.0.1:9001:8080]
+    ports:
+      - 127.0.0.1:9001:8080
     command: koinobori.lambdas.api.main.lambda_handler
     environment:
       - AWS_REGION=eu-central-1
@@ -33,7 +35,8 @@ services:
     image: koinobori/dev:latest
     build:
       dockerfile: docker/koinobori/Dockerfile
-    ports: [127.0.0.1:9002:8080]
+    ports:
+      - 127.0.0.1:9002:8080
     command: koinobori.lambdas.migrations.main.lambda_handler
     environment:
       - AWS_REGION=eu-central-1

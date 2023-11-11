@@ -73,13 +73,13 @@ jobs:
 
       - name: Update lambdas
         run: |
-            aws lambda update-function-code --function-name koinobori-dev-migrations --image-uri ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/koinobori/dev:latest
-            aws lambda wait function-active --function-name koinobori-dev-migrations
+          aws lambda update-function-code --function-name koinobori-dev-migrations --image-uri ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/koinobori/dev:latest
+          aws lambda wait function-active --function-name koinobori-dev-migrations
 
-            aws lambda invoke --cli-read-timeout 0 --function-name koinobori-dev-migrations _response.json
+          aws lambda invoke --cli-read-timeout 0 --function-name koinobori-dev-migrations _response.json
 
-            cat _response.json
-            rm _response.json
+          cat _response.json
+          rm _response.json
 
-            aws lambda wait function-active --function-name koinobori-dev-api
-            aws lambda update-function-code --function-name koinobori-dev-api --image-uri ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/koinobori/dev:latest
+          aws lambda wait function-active --function-name koinobori-dev-api
+          aws lambda update-function-code --function-name koinobori-dev-api --image-uri ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/koinobori/dev:latest
