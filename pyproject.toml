@@ -7,7 +7,7 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "3.11.6"
+python = "3.12.0"
 
 alembic = "1.12.1"
 fastapi = "0.104.1"
@@ -16,6 +16,7 @@ pydynamodb = {extras = ["sqlalchemy"], version = "0.5.5"}
 sqlalchemy = "1.4.50"
 structlog = "23.2.0"
 yarl = "1.9.3"
+setuptools = "68.2.2" # removed in python 3.12, but pydynamodb needs it.
 
 [tool.poetry.group.dev.dependencies]
 docker = "6.1.3"

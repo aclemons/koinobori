@@ -6,6 +6,7 @@ WORKDIR /tmp
 
 COPY ./pyproject.toml ./poetry.lock ./
 
+# hadolint ignore=DL3041
 RUN export PATH="/opt/poetry/bin:$PATH" && \
     export POETRY_HOME="/opt/poetry" && \
     export POETRY_VERSION=1.7.1 && \
@@ -15,9 +16,11 @@ RUN export PATH="/opt/poetry/bin:$PATH" && \
     <poetry-installer python3 - --uninstall && \
     rm poetry-installer && \
     rm -r /root/.cache && \
+    dnf install -y gcc && \
     pip3 install --no-cache-dir --requirement requirements.txt --target "$LAMBDA_TASK_ROOT" && \
     rm requirements.txt && \
-    rm pyproject.toml poetry.lock
+    rm pyproject.toml poetry.lock && \
+    dnf clean all
 
 
 FROM base
