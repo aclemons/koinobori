@@ -8,7 +8,7 @@ COPY ./pyproject.toml ./poetry.lock ./
 
 RUN export PATH="/opt/poetry/bin:$PATH" && \
     export POETRY_HOME="/opt/poetry" && \
-    export POETRY_VERSION=1.7.0 && \
+    export POETRY_VERSION=1.7.1 && \
     curl -sSL https://install.python-poetry.org -o poetry-installer && \
     <poetry-installer python3 - && \
     poetry export --format=requirements.txt --output requirements.txt && \
