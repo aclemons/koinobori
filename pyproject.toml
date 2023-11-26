@@ -15,7 +15,7 @@ mangum = "0.17.0"
 pydynamodb = {extras = ["sqlalchemy"], version = "0.5.5"}
 sqlalchemy = "1.4.50"
 structlog = "23.2.0"
-yarl = "1.9.2"
+yarl = "1.9.3"
 
 [tool.poetry.group.dev.dependencies]
 docker = "6.1.3"
