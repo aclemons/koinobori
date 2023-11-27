@@ -19,7 +19,7 @@ yarl = "1.9.3"
 
 [tool.poetry.group.dev.dependencies]
 docker = "6.1.3"
-pyright = "1.1.335"
+pyright = "1.1.337"
 pytest = "7.4.3"
 rich = "13.6.0"
 ruff = "0.1.6"
