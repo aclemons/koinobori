@@ -14,6 +14,19 @@
         "export POETRY_VERSION=(?<currentValue>.*) &&",
         "POETRY_VERSION=(?<currentValue>.*) python3"
       ]
+    },
+    {
+      "customType": "regex",
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "python-poetry/poetry-plugin-export",
+      "fileMatch": [
+        "docker/koinobori/Dockerfile",
+        "^README\\.md"
+      ],
+      "matchStrings": [
+        "poetry-plugin-export==(?<currentValue>.*) &&",
+        "poetry-plugin-export==(?<currentValue>.*)`\\n"
+      ]
     }
   ],
   "extends": [

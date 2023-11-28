@@ -12,6 +12,7 @@ RUN export PATH="/opt/poetry/bin:$PATH" && \
     export POETRY_VERSION=1.7.1 && \
     curl -sSL https://install.python-poetry.org -o poetry-installer && \
     <poetry-installer python3 - && \
+    poetry self add poetry-plugin-export==1.6.0 && \
     poetry export --format=requirements.txt --output requirements.txt && \
     <poetry-installer python3 - --uninstall && \
     rm poetry-installer && \
