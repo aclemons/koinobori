@@ -1,3 +1,7 @@
+from typing import cast
+
+from sqlalchemy.engine import Engine
+
 if __name__ == "env_py":
     import os
 
@@ -81,7 +85,7 @@ if __name__ == "env_py":
 
         logger.info("Running migrations", url=url)
 
-        connectable = create_engine(url, poolclass=pool.NullPool)
+        connectable = cast(Engine, create_engine(url, poolclass=pool.NullPool))
 
         with connectable.connect() as connection:
             context.configure(
