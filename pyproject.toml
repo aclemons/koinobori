@@ -19,7 +19,7 @@ yarl = "1.9.4"
 setuptools = "69.0.2" # removed in python 3.12, but pydynamodb needs it.
 
 [tool.poetry.group.dev.dependencies]
-docker = "6.1.3"
+docker = "7.0.0"
 pyright = "1.1.342"
 pytest = "7.4.3"
 rich = "13.7.0"
