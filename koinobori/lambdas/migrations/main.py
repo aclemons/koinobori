@@ -2,7 +2,6 @@ import asyncio
 import os
 import signal
 import sys
-from types import FrameType
 
 from alembic import command
 from alembic.config import CommandLine, Config
@@ -33,7 +32,7 @@ if (
 ):
     init_logging(mode="json")
 
-    def shutdown(_signum: int, _frame: FrameType | None) -> None:
+    def shutdown() -> None:
         pass  # nothing to do for now
 
     loop = asyncio.get_event_loop()

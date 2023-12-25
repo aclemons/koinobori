@@ -1,7 +1,6 @@
 import asyncio
 import os
 import signal
-from types import FrameType
 
 from mangum import Mangum
 from mangum.types import LambdaContext, LambdaEvent
@@ -17,7 +16,7 @@ if any(
 
     app = build()
 
-    def shutdown(_signum: int, _frame: FrameType | None) -> None:
+    def shutdown() -> None:
         pass  # nothing to do for now
 
     loop = asyncio.get_event_loop()
