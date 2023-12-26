@@ -36,6 +36,8 @@ select = ["ALL"]
 ignore = [
  "D", # disable docstring checks
  "E501", # black handles long line wrapping
+ "COM812", # conflicts with ruff format
+ "ISC001", # conflicts with ruff format
 ]
 target-version = "py311"
 
