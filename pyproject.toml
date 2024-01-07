@@ -13,7 +13,7 @@ alembic = "1.13.1"
 fastapi = "0.108.0"
 mangum = "0.17.0"
 pydynamodb = {extras = ["sqlalchemy"], version = "0.5.5"}
-sqlalchemy = "1.4.50"
+sqlalchemy = "1.4.51"
 structlog = "23.3.0"
 yarl = "1.9.4"
 setuptools = "69.0.3" # removed in python 3.12, but pydynamodb needs it.
