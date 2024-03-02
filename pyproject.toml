@@ -22,7 +22,7 @@ setuptools = "69.1.1" # removed in python 3.12, but pydynamodb needs it.
 docker = "7.0.0"
 pyright = "1.1.352"
 pytest = "8.0.2"
-rich = "13.7.0"
+rich = "13.7.1"
 ruff = "0.3.0"
 ruff-lsp = "0.0.53"
 uvicorn = {version = "0.27.1", extras = ["standard"]}
