@@ -8,7 +8,7 @@ services:
     environment:
       - TARGET=lambda:8080
   localstack:
-    image: localstack/localstack:3.1.0@sha256:9d278167f2b7fda866b8bbe2a077a3fcf2e2f704b024fa76211c7c468428f977
+    image: localstack/localstack:3.2.0@sha256:167eb023e07eef65f1e490d7a77cf45124e7a24395e4736dd2582e8ea0618ecb
     ports:
       - 127.0.0.1:4566:4566              # LocalStack Gateway
       - 127.0.0.1:4510-4559:4510-4559    # external services port range
