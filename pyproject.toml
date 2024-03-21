@@ -20,7 +20,7 @@ setuptools = "69.1.1" # removed in python 3.12, but pydynamodb needs it.
 
 [tool.poetry.group.dev.dependencies]
 docker = "7.0.0"
-pyright = "1.1.352"
+pyright = "1.1.355"
 pytest = "8.0.2"
 rich = "13.7.1"
 ruff = "0.3.0"
