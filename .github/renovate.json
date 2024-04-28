@@ -27,6 +27,17 @@
         "poetry-plugin-export==(?<currentValue>.*) &&",
         "poetry-plugin-export==(?<currentValue>.*)`\\n"
       ]
+    },
+    {
+      "customType": "regex",
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "opentofu/opentofu",
+      "fileMatch": [
+        "^tf/.opentofu-version$"
+      ],
+      "matchStrings": [
+        "(?<currentValue>.*)"
+      ]
     }
   ],
   "extends": [
@@ -63,6 +74,16 @@
       "enabled": false,
       "matchPackageNames": [
         "python"
+      ]
+    },
+    {
+      "description": "Disable terraform updates (renovate does not yet support opentofu)",
+      "enabled": false,
+      "matchDepTypes": [
+        "required_version"
+      ],
+      "matchPackageNames": [
+        "hashicorp/terraform"
       ]
     }
   ],
