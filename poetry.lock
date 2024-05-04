@@ -871,13 +871,13 @@ typing-extensions = ">=4.6.0,<4.7.0 || >4.7.0"
 
 [[package]]
 name = "pydynamodb"
-version = "0.5.5"
+version = "0.5.7"
 description = "Python DB API 2.0 (PEP 249) client for Amazon DynamoDB"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "PyDynamoDB-0.5.5-py3-none-any.whl", hash = "sha256:0fc85192aa77edab7e96433d6c3a814aa4108d33d50610266bd0deb3d1fd7a22"},
-    {file = "PyDynamoDB-0.5.5.tar.gz", hash = "sha256:438520f69d0c8fe1d50dd4fc1d5289eeeb86c391c51079fea2e7a4258062003b"},
+    {file = "PyDynamoDB-0.5.7-py3-none-any.whl", hash = "sha256:d0f5f2fa1f01296e819c271c543510ff4ddda225cfabc685e0ff86ac5e4638e6"},
+    {file = "PyDynamoDB-0.5.7.tar.gz", hash = "sha256:4be4cadc3accd05317f37b0e60a51efe356bbb3d02e66edf24bb7788b57a1d2b"},
 ]
 
 [package.dependencies]
@@ -1725,4 +1725,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "3.12.2"
-content-hash = "4cfe4c604061adff19b77cd3737cbedf61db4b71ac7a864245ac1c0491e7220b"
+content-hash = "acea3e61e0e5a1edede425d46bc1eb35d563f9f0abb0ad2e84bde914074b0344"
