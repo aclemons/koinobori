@@ -10,7 +10,7 @@ You need Python 3.12.3 and Poetry 1.8.3.
   - `pyenv install "$(cat .python-version)"`
 - `poetry` can be installed through the official script
   - `curl -sSL https://install.python-poetry.org | POETRY_VERSION=1.8.3 python3 -`
-  - `poetry self add poetry-plugin-export==1.7.1`
+  - `poetry self add poetry-plugin-export==1.8.0`
 
 After installing the dependencies, setup your poetry environment:
 
