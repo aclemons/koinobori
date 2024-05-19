@@ -7,7 +7,7 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "3.12.2"
+python = "3.12.3"
 
 alembic = "1.13.1"
 fastapi-slim = "0.111.0"
