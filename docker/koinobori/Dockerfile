@@ -19,14 +19,9 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # hadolint ignore=DL3041,SC2046
 RUN poetry export --format=requirements.txt --output requirements.txt && \
     rm -r /root/.cache && \
-    dnf install -y gcc | tee /tmp/log && \
     pip3 install --no-cache-dir --requirement requirements.txt --target "$LAMBDA_TASK_ROOT" && \
     rm requirements.txt && \
-    rm pyproject.toml poetry.lock && \
-    rpm -e --nodeps systemd && \
-    dnf remove -y $(sed -n '/^Installing: /p' /tmp/log | cut -d';' -f1 | cut -d' ' -f2 | sed '/^systemd$/d' | paste -d' ' -s) && \
-    rm /tmp/log && \
-    dnf clean all
+    rm pyproject.toml poetry.lock
 
 
 FROM base
