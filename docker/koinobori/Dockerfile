@@ -4,23 +4,28 @@ FROM base as deps
 
 WORKDIR /tmp
 
-COPY ./pyproject.toml ./poetry.lock ./
+ENV PATH="/opt/poetry/bin:$PATH"
 
-# hadolint ignore=DL3041
-RUN export PATH="/opt/poetry/bin:$PATH" && \
-    export POETRY_HOME="/opt/poetry" && \
+RUN export POETRY_HOME="/opt/poetry" && \
     export POETRY_VERSION=1.8.3 && \
     curl -sSL https://install.python-poetry.org -o poetry-installer && \
     <poetry-installer python3 - && \
     poetry self add poetry-plugin-export==1.8.0 && \
-    poetry export --format=requirements.txt --output requirements.txt && \
-    <poetry-installer python3 - --uninstall && \
-    rm poetry-installer && \
+    rm poetry-installer
+
+COPY ./pyproject.toml ./poetry.lock ./
+
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+# hadolint ignore=DL3041,SC2046
+RUN poetry export --format=requirements.txt --output requirements.txt && \
     rm -r /root/.cache && \
-    dnf install -y gcc && \
+    dnf install -y gcc | tee /tmp/log && \
     pip3 install --no-cache-dir --requirement requirements.txt --target "$LAMBDA_TASK_ROOT" && \
     rm requirements.txt && \
     rm pyproject.toml poetry.lock && \
+    rpm -e --nodeps systemd && \
+    dnf remove -y $(sed -n '/^Installing: /p' /tmp/log | cut -d';' -f1 | cut -d' ' -f2 | sed '/^systemd$/d' | paste -d' ' -s) && \
+    rm /tmp/log && \
     dnf clean all
 
 
