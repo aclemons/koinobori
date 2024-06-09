@@ -14,7 +14,7 @@ fastapi-slim = "0.111.0"
 mangum = "0.17.0"
 pydynamodb = {extras = ["sqlalchemy"], version = "0.5.8"}
 sqlalchemy = "1.4.52"
-structlog = "24.1.0"
+structlog = "24.2.0"
 yarl = "1.9.4"
 setuptools = "70.0.0" # removed in python 3.12, but pydynamodb needs it.
 
