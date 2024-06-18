@@ -1,4 +1,4 @@
-FROM public.ecr.aws/lambda/python:3.12.2024.06.05.12@sha256:de3bdb1f444cfbf12976b5b2a6400ff9dd4c20c35a115c15f9b420115552cdc9 as base
+FROM public.ecr.aws/lambda/python:3.12.2024.06.14.17@sha256:cc5291811aa5dc859d25f8e12075f8c51d351edb5e00774e171b3e474bc455ad as base
 
 FROM base as deps
 
