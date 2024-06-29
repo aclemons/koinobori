@@ -1,12 +1,15 @@
 import asyncio
 import os
 import signal
+from typing import TYPE_CHECKING
 
 from mangum import Mangum
-from mangum.types import LambdaContext, LambdaEvent
 
 from koinobori.lambdas.api.builder import build
 from koinobori.utils.logging import init_logging
+
+if TYPE_CHECKING:
+    from mangum.types import LambdaContext, LambdaEvent
 
 if any(
     os.environ.get(env_var) == f"{__name__}.lambda_handler"
@@ -24,5 +27,5 @@ if any(
 
     mangum_handler = Mangum(app, lifespan="off")
 
-    def lambda_handler(event: LambdaEvent, context: LambdaContext) -> dict:
+    def lambda_handler(event: "LambdaEvent", context: "LambdaContext") -> dict:
         return mangum_handler(event, context)

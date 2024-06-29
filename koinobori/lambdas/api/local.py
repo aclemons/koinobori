@@ -1,10 +1,13 @@
-from fastapi import FastAPI
+from typing import TYPE_CHECKING
 
 from koinobori.lambdas.api.builder import build
 from koinobori.utils.logging import init_logging
 
+if TYPE_CHECKING:
+    from fastapi import FastAPI
 
-def uvicorn_app() -> FastAPI:
+
+def uvicorn_app() -> "FastAPI":
     init_logging(mode="console")
 
     return build()

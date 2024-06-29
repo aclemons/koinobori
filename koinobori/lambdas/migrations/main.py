@@ -2,12 +2,15 @@ import asyncio
 import os
 import signal
 import sys
+from typing import TYPE_CHECKING
 
 from alembic import command
 from alembic.config import CommandLine, Config
-from mangum.types import LambdaContext, LambdaEvent
 
 from koinobori.utils.logging import init_logging
+
+if TYPE_CHECKING:
+    from mangum.types import LambdaContext, LambdaEvent
 
 
 def main(argv: list[str]) -> None:
@@ -38,7 +41,7 @@ if (
     loop = asyncio.get_event_loop()
     loop.add_signal_handler(signal.SIGTERM, shutdown)
 
-    def lambda_handler(_event: LambdaEvent, _context: LambdaContext) -> dict:
+    def lambda_handler(_event: "LambdaEvent", _context: "LambdaContext") -> dict:
         config = Config()
         config.set_main_option(
             "script_location",
