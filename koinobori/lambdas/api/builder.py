@@ -14,8 +14,9 @@ def build() -> FastAPI:
         debug=False,
     )
 
-    @app.get("/v1/ping", response_class=PlainTextResponse)
     def ping() -> str:
         return "🎏"
+
+    app.get("/v1/ping", response_class=PlainTextResponse)(ping)
 
     return app
