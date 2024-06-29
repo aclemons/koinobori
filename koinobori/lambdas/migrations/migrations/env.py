@@ -8,10 +8,12 @@ if __name__ == "env_py":
     import structlog
     from alembic import context, ddl
     from sqlalchemy import pool
-    from sqlalchemy.engine import create_engine
+    from sqlalchemy.engine import (
+        create_engine,  # type: ignore [reportUnknownVariableType]
+    )
     from yarl import URL
 
-    ddl.impl._impls["dynamodb"] = ddl.impl.DefaultImpl  # noqa: SLF001
+    ddl.impl._impls["dynamodb"] = ddl.impl.DefaultImpl  # noqa: SLF001 # type: ignore [reportPrivateUsage]
 
     logger = structlog.stdlib.get_logger(__name__)
 

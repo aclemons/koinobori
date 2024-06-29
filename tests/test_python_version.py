@@ -54,7 +54,7 @@ def docker_python_version() -> str:
 
     docker_client = docker.from_env()
 
-    log = docker_client.containers.run(
+    log = docker_client.containers.run(  # type: ignore [reportUnknownVariableType]
         image=image,
         entrypoint="/bin/bash",
         command="-c 'python3 --version'",
@@ -64,7 +64,7 @@ def docker_python_version() -> str:
     assert isinstance(log, bytes)
     lambda_python_version = log.decode("utf-8").rstrip().split(" ", 1)[-1]
 
-    docker_client.close()
+    docker_client.close()  # type: ignore [reportUnknownMemberType]
 
     return lambda_python_version
 

@@ -31,6 +31,11 @@ uvicorn = {version = "0.30.1", extras = ["standard"]}
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.pyright]
+reportMissingTypeStubs = "none"
+reportUnnecessaryTypeIgnoreComment = "error"
+typeCheckingMode = "strict"
+
 [tool.ruff]
 target-version = "py312"
 
@@ -40,11 +45,9 @@ mypy-init-return = true
 suppress-dummy-args = true
 
 [tool.ruff.lint.flake8-bugbear]
-extend-immutable-calls = ["fastapi.Depends", "fastapi.Security"]
 
 [tool.ruff.lint.flake8-type-checking]
 quote-annotations = true
-runtime-evaluated-base-classes = ["pydantic.BaseModel"]
 
 [tool.ruff.lint]
 select = ["ALL"]

@@ -41,7 +41,9 @@ if (
     loop = asyncio.get_event_loop()
     loop.add_signal_handler(signal.SIGTERM, shutdown)
 
-    def lambda_handler(_event: "LambdaEvent", _context: "LambdaContext") -> dict:
+    def lambda_handler(
+        _event: "LambdaEvent", _context: "LambdaContext"
+    ) -> dict[str, str]:
         config = Config()
         config.set_main_option(
             "script_location",

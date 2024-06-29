@@ -1,7 +1,7 @@
 import asyncio
 import os
 import signal
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 from mangum import Mangum
 
@@ -27,5 +27,7 @@ if any(
 
     mangum_handler = Mangum(app, lifespan="off")
 
-    def lambda_handler(event: "LambdaEvent", context: "LambdaContext") -> dict:
-        return mangum_handler(event, context)
+    def lambda_handler(
+        event: "LambdaEvent", context: "LambdaContext"
+    ) -> dict[str, Any]:
+        return mangum_handler(event, context)  # type: ignore [reportUnknownVariableType]
