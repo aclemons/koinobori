@@ -54,7 +54,7 @@ def docker_python_version() -> str:
 
     docker_client = docker.from_env()
 
-    log = docker_client.containers.run(  # type: ignore [reportUnknownVariableType]
+    log = docker_client.containers.run(
         image=image,
         entrypoint="/bin/bash",
         command="-c 'python3 --version'",
