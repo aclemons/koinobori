@@ -289,18 +289,18 @@ websockets = ["websocket-client (>=1.3.0)"]
 
 [[package]]
 name = "fastapi-slim"
-version = "0.112.0"
+version = "0.112.1"
 description = "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "fastapi_slim-0.112.0-py3-none-any.whl", hash = "sha256:7663edfbb5036d641aa45b4f5dad341cf78d98885216e78743a8cdd39a38883e"},
-    {file = "fastapi_slim-0.112.0.tar.gz", hash = "sha256:2420f700b7dc2d1a6d02c7230f7aa2ae9fa0320d8d481094062ff717659c0843"},
+    {file = "fastapi_slim-0.112.1-py3-none-any.whl", hash = "sha256:cc227cf9402d0ba54a24f80eb205c33bcb25d3ea18d53fdac3fd76ea5af8e76d"},
+    {file = "fastapi_slim-0.112.1.tar.gz", hash = "sha256:876ebd24e72273986709db2d469b75dc18f04c3ab9140ffd78b29d7785d26687"},
 ]
 
 [package.dependencies]
 pydantic = ">=1.7.4,<1.8 || >1.8,<1.8.1 || >1.8.1,<2.0.0 || >2.0.0,<2.0.1 || >2.0.1,<2.1.0 || >2.1.0,<3.0.0"
-starlette = ">=0.37.2,<0.38.0"
+starlette = ">=0.37.2,<0.39.0"
 typing-extensions = ">=4.8.0"
 
 [package.extras]
@@ -1787,4 +1787,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "3.12.3"
-content-hash = "63af5481da27ab08ea7181ff9a707662bae350197bff84bbf1eb29707124eaf2"
+content-hash = "aca17956445f4d8c934ec034171ab41bb5275071cde1565c6a3f732d18b3cd2c"
