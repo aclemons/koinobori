@@ -10,7 +10,7 @@ readme = "README.md"
 python = "3.12.3"
 
 alembic = "1.13.2"
-fastapi-slim = "0.112.0"
+fastapi-slim = "0.112.1"
 mangum = "0.17.0"
 pydynamodb = {extras = ["sqlalchemy"], version = "0.6.2"}
 sqlalchemy = "1.4.53"
