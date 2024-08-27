@@ -6,7 +6,7 @@ import pytest
 import docker
 
 
-@pytest.fixture()
+@pytest.fixture
 def dot_python_version() -> str:
     python_version_file = Path(__file__).parent.parent / ".python-version"
 
@@ -14,7 +14,7 @@ def dot_python_version() -> str:
         return f.readline().rstrip()
 
 
-@pytest.fixture()
+@pytest.fixture
 def pyproject_toml_python_version() -> str:
     pyproject_toml = Path(__file__).parent.parent / "pyproject.toml"
 
@@ -24,7 +24,7 @@ def pyproject_toml_python_version() -> str:
         return data["tool"]["poetry"]["dependencies"]["python"]
 
 
-@pytest.fixture()
+@pytest.fixture
 def readme_python_version() -> str:
     readme = Path(__file__).parent.parent / "README.md"
 
@@ -40,7 +40,7 @@ def readme_python_version() -> str:
     return lines[0].split("Python", 1)[-1].strip().split(" ", 1)[0]
 
 
-@pytest.fixture()
+@pytest.fixture
 def docker_python_version() -> str:
     dockerfile = Path() / "docker" / "koinobori" / "Dockerfile"
 
