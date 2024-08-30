@@ -16,7 +16,7 @@ pydynamodb = {extras = ["sqlalchemy"], version = "0.6.2"}
 sqlalchemy = "1.4.53"
 structlog = "24.4.0"
 yarl = "1.9.4"
-setuptools = "73.0.1" # removed in python 3.12, but pydynamodb needs it.
+setuptools = "74.0.0" # removed in python 3.12, but pydynamodb needs it.
 
 [tool.poetry.group.dev.dependencies]
 docker = "7.1.0"
