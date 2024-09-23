@@ -3,8 +3,6 @@ from fastapi.responses import PlainTextResponse
 
 from koinobori.lambdas import api
 
-SWAGGER_UI_VERSION = "5.1.0"
-
 
 def build() -> FastAPI:
     app = FastAPI(
