@@ -4,28 +4,13 @@
     {
       "customType": "regex",
       "datasourceTemplate": "github-releases",
-      "depNameTemplate": "python-poetry/poetry",
+      "depNameTemplate": "astral-sh/uv",
       "fileMatch": [
-        "docker/koinobori/Dockerfile",
         "^README\\.md"
       ],
       "matchStrings": [
-        "and Poetry (?<currentValue>.*)\\.\\n",
-        "export POETRY_VERSION=(?<currentValue>.*) &&",
-        "POETRY_VERSION=(?<currentValue>.*) python3"
-      ]
-    },
-    {
-      "customType": "regex",
-      "datasourceTemplate": "github-releases",
-      "depNameTemplate": "python-poetry/poetry-plugin-export",
-      "fileMatch": [
-        "docker/koinobori/Dockerfile",
-        "^README\\.md"
-      ],
-      "matchStrings": [
-        "poetry-plugin-export==(?<currentValue>.*) &&",
-        "poetry-plugin-export==(?<currentValue>.*)`\\n"
+        "You need uv (?<currentValue>.*)\\.\\n",
+        "astral\\.sh/uv/(?<currentValue>.*)/install\\.sh"
       ]
     },
     {

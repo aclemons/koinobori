@@ -4,24 +4,21 @@ An example FastAPI app. 🎏
 
 ## Getting Started
 
-You need Python 3.12.5 and Poetry 1.8.3.
+You need uv 0.4.15.
 
-- `pyenv` is the simplest way to manage your python versions.
-  - `pyenv install "$(cat .python-version)"`
-- `poetry` can be installed through the official script
-  - `curl -sSL https://install.python-poetry.org | POETRY_VERSION=1.8.3 python3 -`
-  - `poetry self add poetry-plugin-export==1.8.0`
+- `uv` can be installed through the official script
+  - `curl -LsSf https://astral.sh/uv/0.4.6/install.sh | sh`
 
-After installing the dependencies, setup your poetry environment:
+After installing uv, setup your environment:
 
-    $ poetry env use "$(cat .python-version)"
-    $ poetry install
+    $ uv python install "$(cat .python-version)"
+    $ uv sync
 
 ## Dev Server
 
 You can start running the dev server with:
 
-    $ poetry run python3 koinobori/lambdas/api/local.py
+    $ uv run --python-preference only-managed python3 koinobori/lambdas/api/local.py
 
 The swagger ui will now be accessible at http://127.0.0.1:8000/docs
 

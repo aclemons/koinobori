@@ -1,35 +1,33 @@
-[tool.poetry]
+[project]
 name = "koinobori"
 version = "0.0.1"
 description = ""
-authors = ["Andrew Clemons <andrew.clemons@gmail.com>"]
-license = "MIT"
 readme = "README.md"
+requires-python = "==3.12.5"
+dependencies = [
+    "alembic==1.13.2",
+    "fastapi-slim==0.115.0",
+    "mangum==0.18.0",
+    "pydynamodb[sqlalchemy]==0.6.3",
+    "setuptools==75.1.0", # removed in python 3.12, but pydynamodb needs it.
+    "structlog==24.4.0",
+    "yarl==1.11.1",
+]
 
-[tool.poetry.dependencies]
-python = "3.12.5"
-
-alembic = "1.13.2"
-fastapi-slim = "0.115.0"
-mangum = "0.18.0"
-pydynamodb = {extras = ["sqlalchemy"], version = "0.6.3"}
-sqlalchemy = "1.4.54"
-structlog = "24.4.0"
-yarl = "1.11.1"
-setuptools = "75.1.0" # removed in python 3.12, but pydynamodb needs it.
-
-[tool.poetry.group.dev.dependencies]
-docker = "7.1.0"
-pyright = "1.1.381"
-pytest = "8.3.3"
-rich = "13.8.1"
-ruff = "0.6.7"
-ruff-lsp = "0.0.57"
-uvicorn = {version = "0.30.6", extras = ["standard"]}
+[tool.uv]
+dev-dependencies = [
+    "docker>=7.1.0",
+    "pyright>=1.1.381",
+    "pytest>=8.3.3",
+    "rich>=13.8.1",
+    "ruff-lsp>=0.0.57",
+    "ruff>=0.6.7",
+    "uvicorn[standard]>=0.30.6",
+]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [tool.pyright]
 reportMissingTypeStubs = "none"
