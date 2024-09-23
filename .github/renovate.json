@@ -32,15 +32,23 @@
       "customType": "regex",
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "opentofu/opentofu",
-      "fileMatch": ["^tf/\\.opentofu-version$"],
-      "matchStrings": ["(?<currentValue>.*)"]
+      "fileMatch": [
+        "^tf/\\.opentofu-version$"
+      ],
+      "matchStrings": [
+        "(?<currentValue>.*)"
+      ]
     },
     {
       "customType": "regex",
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "opentofu/opentofu",
-      "fileMatch": ["^tf/.*\\.tf$"],
-      "matchStrings": ["required_version\\s=\\s\"(?<currentValue>.*?)\""]
+      "fileMatch": [
+        "^tf/.*\\.tf$"
+      ],
+      "matchStrings": [
+        "required_version\\s=\\s\"(?<currentValue>.*?)\""
+      ]
     }
   ],
   "extends": [
