@@ -290,13 +290,13 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "docker", specifier = ">=7.1.0" },
-    { name = "pyright", specifier = ">=1.1.381" },
-    { name = "pytest", specifier = ">=8.3.3" },
-    { name = "rich", specifier = ">=13.8.1" },
-    { name = "ruff", specifier = ">=0.6.7" },
-    { name = "ruff-lsp", specifier = ">=0.0.57" },
-    { name = "uvicorn", extras = ["standard"], specifier = ">=0.30.6" },
+    { name = "docker", specifier = "==7.1.0" },
+    { name = "pyright", specifier = "==1.1.381" },
+    { name = "pytest", specifier = "==8.3.3" },
+    { name = "rich", specifier = "==13.8.1" },
+    { name = "ruff", specifier = "==0.6.7" },
+    { name = "ruff-lsp", specifier = "==0.0.57" },
+    { name = "uvicorn", extras = ["standard"], specifier = "==0.30.6" },
 ]
 
 [[package]]
