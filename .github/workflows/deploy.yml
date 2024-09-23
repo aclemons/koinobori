@@ -83,3 +83,13 @@ jobs:
 
           aws lambda wait function-active --function-name koinobori-dev-api
           aws lambda update-function-code --function-name koinobori-dev-api --image-uri ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/koinobori/dev:latest
+
+      - name: Test lambda
+        run: |
+          url="$(aws lambda get-function-url-config --function koinobori-dev-api | jq -r .FunctionUrl)"
+          output="$(curl -s -f "$url"/v1/ping)"
+
+          if [[ "$output" != "🎏" ]] ; then
+            2>&1 printf 'API returned unexpected response: %s\n' "$output"
+            exit 1
+          fi
