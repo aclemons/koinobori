@@ -14,6 +14,8 @@ if TYPE_CHECKING:
 
 
 def main(argv: list[str]) -> None:
+    init_logging(mode="console")
+
     command_line = CommandLine()
 
     options = command_line.parser.parse_args(argv or None)
