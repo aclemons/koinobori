@@ -15,7 +15,7 @@ mangum = "0.17.0"
 pydynamodb = {extras = ["sqlalchemy"], version = "0.6.3"}
 sqlalchemy = "1.4.54"
 structlog = "24.4.0"
-yarl = "1.9.8"
+yarl = "1.9.11"
 setuptools = "75.1.0" # removed in python 3.12, but pydynamodb needs it.
 
 [tool.poetry.group.dev.dependencies]
