@@ -5,7 +5,7 @@ description = ""
 readme = "README.md"
 requires-python = "==3.12.5"
 dependencies = [
-    "alembic==1.13.2",
+    "alembic==1.13.3",
     "fastapi-slim==0.115.0",
     "mangum==0.18.0",
     "pydynamodb[sqlalchemy]==0.6.3",
