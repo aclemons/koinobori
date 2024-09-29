@@ -4,10 +4,10 @@ An example FastAPI app. 🎏
 
 ## Getting Started
 
-You need uv 0.4.15.
+You need uv 0.4.17.
 
 - `uv` can be installed through the official script
-  - `curl -LsSf https://astral.sh/uv/0.4.15/install.sh | sh`
+  - `curl -LsSf https://astral.sh/uv/0.4.17/install.sh | sh`
 
 After installing uv, setup your environment:
 
