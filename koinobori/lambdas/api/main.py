@@ -30,4 +30,4 @@ if any(
     def lambda_handler(
         event: "LambdaEvent", context: "LambdaContext"
     ) -> dict[str, Any]:
-        return mangum_handler(event, context)  # type: ignore [reportUnknownVariableType]
+        return mangum_handler(event, context)
