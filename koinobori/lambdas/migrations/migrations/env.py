@@ -1,7 +1,3 @@
-from typing import cast
-
-from sqlalchemy.engine import Engine
-
 if __name__ == "env_py":
     import os
 
@@ -9,7 +5,7 @@ if __name__ == "env_py":
     from alembic import context, ddl
     from sqlalchemy import pool
     from sqlalchemy.engine import (
-        create_engine,  # type: ignore [reportUnknownVariableType]
+        create_engine,
     )
     from yarl import URL
 
@@ -87,7 +83,7 @@ if __name__ == "env_py":
 
         logger.info("Running migrations", url=url)
 
-        connectable = cast(Engine, create_engine(url, poolclass=pool.NullPool))
+        connectable = create_engine(url, poolclass=pool.NullPool)
 
         with connectable.connect() as connection:
             context.configure(
