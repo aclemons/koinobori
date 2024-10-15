@@ -81,6 +81,13 @@
       "matchDepTypes": [
         "required_version"
       ]
+    },
+    {
+      "groupName": "uv monorepo",
+      "matchDepNames": [
+        "astral-sh/uv",
+        "ghcr.io/astral-sh/uv"
+      ]
     }
   ],
   "pre-commit": {
