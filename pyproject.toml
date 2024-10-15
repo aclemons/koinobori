@@ -22,7 +22,7 @@ dev-dependencies = [
     "rich==13.9.2",
     "ruff-lsp==0.0.57",
     "ruff==0.6.9",
-    "uvicorn[standard]==0.31.1",
+    "uvicorn[standard]==0.32.0",
 ]
 
 [build-system]
