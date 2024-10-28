@@ -156,16 +156,16 @@ wheels = [
 
 [[package]]
 name = "fastapi-slim"
-version = "0.115.2"
+version = "0.115.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pydantic" },
     { name = "starlette" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/69/75/17a88fc47510f0734f3395ee80704be827fecaa3151721bbcb94668d80b4/fastapi_slim-0.115.2.tar.gz", hash = "sha256:83a1ce1e385029cad305b49dcc03622d2be6a905b2ab65d2e7096285605cca8d", size = 300060 }
+sdist = { url = "https://files.pythonhosted.org/packages/39/7b/a0554db21b65cb966e6a9e56f7686efe2496de3d6114b625e72722827bef/fastapi_slim-0.115.4.tar.gz", hash = "sha256:6d37987e4d1f6adefb8c7119c9b804e59c9b3f1a488be5425994d52308e2f958", size = 300898 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/58/ae/dd156b24ba02ab3b05319b04934accbfc6d939f1aca8c2453e055f68d31a/fastapi_slim-0.115.2-py3-none-any.whl", hash = "sha256:7dd65a58e9b2a1558ebd479d35e621417d4572188d902a3e5564739914ddc81d", size = 94706 },
+    { url = "https://files.pythonhosted.org/packages/06/a7/f3aa41aade36694acbffafac39f1ec40757692b04a609d178faec07a1b48/fastapi_slim-0.115.4-py3-none-any.whl", hash = "sha256:8947515618c21665590a1673a0bfe4c721db4267999c149d5301c3c0f7b3d9ce", size = 94791 },
 ]
 
 [[package]]
@@ -251,7 +251,7 @@ dependencies = [
     { name = "yarl" },
 ]
 
-[package.dev-dependencies]
+[package.dependency-groups]
 dev = [
     { name = "docker" },
     { name = "pyright" },
@@ -265,7 +265,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "alembic", specifier = "==1.13.3" },
-    { name = "fastapi-slim", specifier = "==0.115.2" },
+    { name = "fastapi-slim", specifier = "==0.115.4" },
     { name = "mangum", specifier = "==0.19.0" },
     { name = "orjson", specifier = "==3.10.9" },
     { name = "pydynamodb", extras = ["sqlalchemy"], specifier = "==0.7.0" },
@@ -274,7 +274,7 @@ requires-dist = [
     { name = "yarl", specifier = "==1.15.5" },
 ]
 
-[package.metadata.requires-dev]
+[package.metadata.dependency-groups]
 dev = [
     { name = "docker", specifier = "==7.1.0" },
     { name = "pyright", specifier = "==1.1.385" },
