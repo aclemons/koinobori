@@ -21,7 +21,7 @@ dev-dependencies = [
     "docker==7.1.0",
     "pyright==1.1.385",
     "pytest==8.3.3",
-    "rich==13.9.2",
+    "rich==13.9.4",
     "ruff-lsp==0.0.58",
     "ruff==0.7.0",
     "uvicorn[standard]==0.32.0",
