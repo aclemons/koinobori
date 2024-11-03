@@ -1,7 +1,7 @@
 ---
 services:
   proxy:
-    image: bref/local-api-gateway:latest@sha256:cd1aa1f0d018a44003c3f7dda7bc3fb6d59782a95484210117230583b23c66ad
+    image: bref/local-api-gateway:latest@sha256:b088b7f7a2ce0d288502469e6696088945dba12d0ce8c97f619a11ad5f8f1b33
     ports:
       - 127.0.0.1:8000:8000
     environment:
