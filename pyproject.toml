@@ -45,8 +45,6 @@ allow-star-arg-any = true
 mypy-init-return = true
 suppress-dummy-args = true
 
-[tool.ruff.lint.flake8-bugbear]
-
 [tool.ruff.lint.flake8-type-checking]
 quote-annotations = true
 
@@ -54,7 +52,6 @@ quote-annotations = true
 select = ["ALL"]
 ignore = [
  "D", # disable docstring checks
- "E501", # black handles long line wrapping
  "COM812", # conflicts with ruff format
  "ISC001", # conflicts with ruff format
 ]
