@@ -35,10 +35,10 @@ build-backend = "hatchling.build"
 reportMissingTypeStubs = "none"
 reportUnnecessaryTypeIgnoreComment = "error"
 typeCheckingMode = "strict"
-pythonVersion = "3.12"
+pythonVersion = "3.13"
 
 [tool.ruff]
-target-version = "py312"
+target-version = "py313"
 
 [tool.ruff.lint.flake8-annotations]
 allow-star-arg-any = true
