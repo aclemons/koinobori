@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING, Any
 from mangum import Mangum
 
 from koinobori.lambdas.api.builder import build
-from koinobori.utils.logging import init_logging
+from koinobori.utils.log_setup import init_logging
 
 if TYPE_CHECKING:
     from mangum.types import LambdaContext, LambdaEvent
