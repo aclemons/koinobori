@@ -11,13 +11,15 @@ RUN --mount=from=uv,source=/uv,target=/bin/uv \
     --mount=type=cache,target=/root/.cache/uv \
     --mount=type=bind,source=uv.lock,target=uv.lock \
     --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
-    uv pip install --requirement pyproject.toml --target "$LAMBDA_TASK_ROOT"
+    uv export --no-emit-workspace --no-dev --extra apis --format requirements-txt --frozen --output-file requirements.txt --quiet && \
+    uv pip install --requirements requirements.txt --target "$LAMBDA_TASK_ROOT" && \
+    rm requirements.txt
 
 RUN --mount=from=uv,source=/uv,target=/bin/uv \
     --mount=type=cache,target=/root/.cache/uv \
     --mount=type=bind,source=.,target=/tmp/koinobori \
     uv build --wheel --out-dir /tmp/dist && \
-    uv pip install --target "$LAMBDA_TASK_ROOT" /tmp/dist/koinobori*whl && \
+    uv pip install --no-deps --target "$LAMBDA_TASK_ROOT" /tmp/dist/*whl && \
     rm -rf /tmp/dist
 
 FROM base
