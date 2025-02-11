@@ -23,7 +23,7 @@ dev-dependencies = [
     "pytest==8.3.4",
     "rich==13.9.4",
     "ruff-lsp==0.0.61",
-    "ruff==0.9.5",
+    "ruff==0.9.6",
     "uvicorn[standard]==0.34.0",
 ]
 
