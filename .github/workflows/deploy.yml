@@ -40,13 +40,6 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@f7ce87c1d6bead3e36075b2ce75da1f6cc28aaca # v3.9.0
 
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567 # v3.3.0
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ github.token }}
-
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@4fc4975a852c8cd99761e2de1f4ba73402e44dd9 # v4.0.3
         with:
@@ -70,8 +63,6 @@ jobs:
           file: docker/koinobori/Dockerfile
           provenance: false
           tags: |
-            ghcr.io/${{ github.repository_owner }}/koinobori:latest
-            ghcr.io/${{ github.repository_owner }}/koinobori:${{ env.DOCKER_IMAGE_VERSION }}
             ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/koinobori/dev:latest
             ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/koinobori/dev:${{ env.DOCKER_IMAGE_VERSION }}
 
