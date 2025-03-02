@@ -11,7 +11,7 @@ RUN --mount=from=uv,source=/uv,target=/bin/uv \
     --mount=type=cache,target=/root/.cache/uv \
     --mount=type=bind,source=uv.lock,target=uv.lock \
     --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
-    uv export --no-emit-workspace --no-dev --extra apis --format requirements-txt --frozen --output-file requirements.txt --quiet && \
+    uv export --no-emit-workspace --no-dev --format requirements-txt --frozen --output-file requirements.txt --quiet && \
     uv pip install --requirements requirements.txt --target "$LAMBDA_TASK_ROOT" && \
     rm requirements.txt
 
