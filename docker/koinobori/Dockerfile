@@ -1,5 +1,5 @@
 FROM ghcr.io/astral-sh/uv:0.6.3@sha256:8257f3d17fd04794feaf89d83b4ccca3b2eaa5501de9399fa53929843c0a5b55 AS uv
-FROM public.ecr.aws/lambda/python:3.13.2025.03.14.16@sha256:870406044a82745b4ddba6ae07e3f39a300650236205bddf2f7be9b9fd528d07 AS base
+FROM public.ecr.aws/lambda/python:3.13.2025.03.21.14@sha256:83b6a558d5a6cdc894ef0b478a6ca3ad67d5b0265a8c77b89bf284e05e748b3a AS base
 
 FROM base AS deps
 
