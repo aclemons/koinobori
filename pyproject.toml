@@ -12,7 +12,7 @@ dependencies = [
     "pydynamodb[sqlalchemy]==0.7.0",
     # removed in python 3.12, but pydynamodb needs it.
     "setuptools==75.8.2",
-    "structlog==25.1.0",
+    "structlog==25.2.0",
     "yarl==1.18.3",
 ]
 
