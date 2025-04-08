@@ -13,7 +13,7 @@ dependencies = [
     # removed in python 3.12, but pydynamodb needs it.
     "setuptools==77.0.3",
     "structlog==25.2.0",
-    "yarl==1.18.3",
+    "yarl==1.19.0",
 ]
 
 [tool.uv]
