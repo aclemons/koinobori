@@ -5,8 +5,8 @@
       "customType": "regex",
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "astral-sh/uv",
-      "fileMatch": [
-        "^README\\.md"
+      "managerFilePatterns": [
+        "/^README\\.md/"
       ],
       "matchStrings": [
         "You need uv (?<currentValue>.*)\\.\\n",
@@ -17,8 +17,8 @@
       "customType": "regex",
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "opentofu/opentofu",
-      "fileMatch": [
-        "^tf/\\.opentofu-version$"
+      "managerFilePatterns": [
+        "/^tf/\\.opentofu-version$/"
       ],
       "matchStrings": [
         "(?<currentValue>.*)"
@@ -28,8 +28,8 @@
       "customType": "regex",
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "opentofu/opentofu",
-      "fileMatch": [
-        "^tf/.*\\.tf$"
+      "managerFilePatterns": [
+        "/^tf/.*\\.tf$/"
       ],
       "matchStrings": [
         "required_version\\s=\\s\"(?<currentValue>.*?)\""
@@ -37,9 +37,9 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        "(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml$",
-        "(^|/)action\\.ya?ml$"
+      "managerFilePatterns": [
+        "/(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml$/",
+        "/(^|/)action\\.ya?ml$/"
       ],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>[a-zA-Z0-9-._]+?) depName=(?<depName>[^\\s]+?)(?: (?:lookupName|packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?\\s+[A-Za-z0-9_]+?_IMAGE\\s*:\\s*[\"']?(?<currentValue>.+?)@(?<currentDigest>sha256:[a-f0-9]+)[\"']?\\s"
