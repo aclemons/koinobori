@@ -1,8 +1,10 @@
 import contextlib
+import json
 import logging
 import logging.config
 from typing import TYPE_CHECKING, Any, Literal
 
+import orjson
 import structlog
 
 if TYPE_CHECKING:
@@ -39,14 +41,10 @@ def init_logging(mode: Literal["console", "json"] = "console") -> None:
             processors.append(structlog.processors.dict_tracebacks)
 
             def orjson_dumps(*args: Any, **kwargs: Any) -> str:
-                import orjson
-
                 kwargs["option"] = orjson.OPT_SORT_KEYS
                 return orjson.dumps(*args, **kwargs).decode()
 
             def stdlib_dumps(*args: Any, **kwargs: Any) -> str:
-                import json
-
                 kwargs["sort_keys"] = True
                 return json.dumps(*args, **kwargs)
 
