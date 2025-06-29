@@ -3,7 +3,7 @@ name = "koinobori"
 version = "0.0.1"
 description = ""
 readme = "README.md"
-requires-python = "==3.13.3"
+requires-python = "==3.13.4"
 dependencies = [
     "alembic==1.16.2",
     "fastapi-slim==0.115.13",
