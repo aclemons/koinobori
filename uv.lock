@@ -268,7 +268,7 @@ requires-dist = [
     { name = "fastapi-slim", specifier = "==0.115.14" },
     { name = "mangum", specifier = "==0.19.0" },
     { name = "orjson", specifier = "==3.10.18" },
-    { name = "pydynamodb", extras = ["sqlalchemy"], specifier = "==0.7.0" },
+    { name = "pydynamodb", extras = ["sqlalchemy"], specifier = "==0.7.2" },
     { name = "setuptools", specifier = "==80.9.0" },
     { name = "structlog", specifier = "==25.4.0" },
     { name = "yarl", specifier = "==1.20.1" },
@@ -552,7 +552,7 @@ wheels = [
 
 [[package]]
 name = "pydynamodb"
-version = "0.7.0"
+version = "0.7.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "boto3" },
@@ -561,9 +561,9 @@ dependencies = [
     { name = "sqlean-py" },
     { name = "tenacity" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/0f/75/9d1871d3000ba7482ddb9e08fdcca1c192975a5ff5dd9ee9611a4ae23498/PyDynamoDB-0.7.0.tar.gz", hash = "sha256:4fc46119350c325e52e47a6155320cc8b4fde4a279e57e2e4040caf2b8427e09", size = 43805, upload-time = "2024-09-23T15:32:09.071Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/5c/29/afbb771a4eef16d49868ca4d10234abce735532a1fb4fd94529cb1ae4322/PyDynamoDB-0.7.2.tar.gz", hash = "sha256:d15da63721e925aa2f054c3be405364afd3aaf34e06616948c9e5e99565fa953", size = 43805, upload-time = "2025-04-07T23:32:43.124Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c6/68/1e9fdc4a65cfc7c2d6434413d3e0d2779eae35090120d7d122e68816a2fd/PyDynamoDB-0.7.0-py3-none-any.whl", hash = "sha256:8ee5f5a5c61c1a580b67f686956030fda11359225f67d795fa0707ef3ec008ae", size = 57077, upload-time = "2024-09-23T15:32:06.984Z" },
+    { url = "https://files.pythonhosted.org/packages/66/c3/3ec485c9abc40149fe40c2aaf37d1b4aa097103b91fc125f39d86e2179c0/PyDynamoDB-0.7.2-py3-none-any.whl", hash = "sha256:f63673a02fdeaa5c919218c7dd75c59ec9024a8dcf1c62e1edaa8a4a25eb4886", size = 57102, upload-time = "2025-04-07T23:32:40.679Z" },
 ]
 
 [package.optional-dependencies]
@@ -810,17 +810,9 @@ wheels = [
 
 [[package]]
 name = "sqlean-py"
-version = "3.49.1"
+version = "3.45.1"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/67/eb/ac95fab0bc4658124b4ec8fbc31fc494165ab4544606ae91b9a489907dad/sqlean_py-3.49.1.tar.gz", hash = "sha256:210d89989226b988d7d6391f837387d3b81e8cd608c997e0bd37826e395970e7", size = 3319012, upload-time = "2025-05-02T11:58:24.307Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/c4/d3/30a7dc9f6030ea2a1c76fcbb220d1f5d95a16f22f50d4cd80c8778ca5018/sqlean_py-3.49.1-cp313-cp313-macosx_10_15_x86_64.whl", hash = "sha256:ba8e5fc5b9d6682f3fbb626e1f936a4c4ac7377c3d044beaef695e6306a9a39b", size = 1129238, upload-time = "2025-05-02T11:58:04.085Z" },
-    { url = "https://files.pythonhosted.org/packages/87/73/ccd43c0d6ca4248005687c5c1ce121924e368c0b195b98880810f468312d/sqlean_py-3.49.1-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:3112cce35bb97f17b55419e955dc74c7deebb0b548e54d99b3e32bb3d3c62ce4", size = 1053654, upload-time = "2025-05-02T11:58:06.153Z" },
-    { url = "https://files.pythonhosted.org/packages/82/d5/cfdb8098117fff9f7856d5c86c93d9c7bebdb5801b551cfabf36e117b764/sqlean_py-3.49.1-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:9974027675e1edf8a8c90383f95e4038052e96ef7a9a8fa7f8125ed275cc28ba", size = 3000002, upload-time = "2025-05-02T11:58:07.54Z" },
-    { url = "https://files.pythonhosted.org/packages/96/52/7e713a61ded163a5fece9fb144b60107889e5d813ba9cff278e65673b6f9/sqlean_py-3.49.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:11fe4e2e74c1749bf98e4aae8fb02978e4c03d4a491be18c4e5b244b29408fdf", size = 3004709, upload-time = "2025-05-02T11:58:09.012Z" },
-    { url = "https://files.pythonhosted.org/packages/c4/d6/455e75e1e540b64e230f7282ec55777e030190a486e98a2fce5d6437afa2/sqlean_py-3.49.1-cp313-cp313-win_amd64.whl", hash = "sha256:de820bdb39729044f9ed94f0addfe308b020479334146036a773f470d7594d87", size = 804300, upload-time = "2025-05-02T11:58:10.552Z" },
-    { url = "https://files.pythonhosted.org/packages/99/bf/b63830855455fd22278ddc78cc7c64dffb5e1a69c15245c18275317ae9d5/sqlean_py-3.49.1-cp313-cp313-win_arm64.whl", hash = "sha256:3c1661f2fcf4d10ec3940ef8d2146bb58260b409c9033f7a727a6962e2032b7c", size = 739448, upload-time = "2025-05-02T11:58:12.458Z" },
-]
+sdist = { url = "https://files.pythonhosted.org/packages/e7/a5/918f58242014a76d873ed7e4f8618fd3d3942d2cf1544324c45a757c2e14/sqlean.py-3.45.1.tar.gz", hash = "sha256:25fbf0a111856e0384dbc412156e2e688948525c7d8609dc3803512c70130740", size = 3216428, upload-time = "2024-02-06T09:50:42.624Z" }
 
 [[package]]
 name = "starlette"
