@@ -19,7 +19,7 @@ dependencies = [
 [tool.uv]
 dev-dependencies = [
     "docker==7.1.0",
-    "pyright==1.1.403",
+    "pyright==1.1.404",
     "pytest==8.4.1",
     "rich==14.1.0",
     "ruff-lsp==0.0.62",
