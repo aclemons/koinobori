@@ -20,7 +20,7 @@ dependencies = [
 dev-dependencies = [
     "docker==7.1.0",
     "pyright==1.1.405",
-    "pytest==8.4.1",
+    "pytest==8.4.2",
     "rich==14.1.0",
     "ruff-lsp==0.0.62",
     "ruff==0.13.0",
