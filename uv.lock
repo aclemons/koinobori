@@ -266,7 +266,7 @@ requires-dist = [
     { name = "fastapi-slim", specifier = "==0.117.1" },
     { name = "mangum", specifier = "==0.19.0" },
     { name = "orjson", specifier = "==3.11.3" },
-    { name = "pydynamodb", extras = ["sqlalchemy"], specifier = "==0.7.0" },
+    { name = "pydynamodb", extras = ["sqlalchemy"], specifier = "==0.7.4" },
     { name = "setuptools", specifier = "==80.9.0" },
     { name = "structlog", specifier = "==25.4.0" },
     { name = "yarl", specifier = "==1.20.1" },
@@ -552,7 +552,7 @@ wheels = [
 
 [[package]]
 name = "pydynamodb"
-version = "0.7.0"
+version = "0.7.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "boto3" },
@@ -561,9 +561,9 @@ dependencies = [
     { name = "sqlean-py" },
     { name = "tenacity" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/0f/75/9d1871d3000ba7482ddb9e08fdcca1c192975a5ff5dd9ee9611a4ae23498/PyDynamoDB-0.7.0.tar.gz", hash = "sha256:4fc46119350c325e52e47a6155320cc8b4fde4a279e57e2e4040caf2b8427e09", size = 43805, upload-time = "2024-09-23T15:32:09.071Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/29/1e/e00250230f7c7ff34e63fe1f19b1f402379d7a2a6ec11fb658b18beda868/pydynamodb-0.7.4.tar.gz", hash = "sha256:b515bc7321e930a61f440694b78c02cc5490da0c854224862418cf292eb85bc1", size = 47372, upload-time = "2025-10-01T20:03:11.498Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c6/68/1e9fdc4a65cfc7c2d6434413d3e0d2779eae35090120d7d122e68816a2fd/PyDynamoDB-0.7.0-py3-none-any.whl", hash = "sha256:8ee5f5a5c61c1a580b67f686956030fda11359225f67d795fa0707ef3ec008ae", size = 57077, upload-time = "2024-09-23T15:32:06.984Z" },
+    { url = "https://files.pythonhosted.org/packages/9a/ff/c464f21cf95a37a280c48a4edf20767fc42498fbca616327bed8edac71b9/pydynamodb-0.7.4-py3-none-any.whl", hash = "sha256:f27a725506677754462aa03129e23ffad8e0e1fdf3ca876c95c5fa608750fba5", size = 60862, upload-time = "2025-10-01T20:03:10.156Z" },
 ]
 
 [package.optional-dependencies]
@@ -812,15 +812,9 @@ wheels = [
 
 [[package]]
 name = "sqlean-py"
-version = "3.50.4.3"
+version = "3.45.1"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/7c/52/30b9bf4ab5810a4e46ef3cbccde8f118e4f59cbea9d913f1c9f4a7ef216c/sqlean_py-3.50.4.3.tar.gz", hash = "sha256:0c01d810191ec7931fca98a46806d6946f240e0275b678d093ce5a89a39035ff", size = 3481771, upload-time = "2025-08-30T12:52:21.894Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/13/d5/a6b16a563ae49b9a2ed50661867b3cbfbce3763939a2773f34824a301ca8/sqlean_py-3.50.4.3-cp313-cp313-macosx_10_15_x86_64.whl", hash = "sha256:a1e2eb59b5c1e677242c0727fb3e03d36a810053937f75d9af83c953903d3d87", size = 1154388, upload-time = "2025-08-30T12:52:08.094Z" },
-    { url = "https://files.pythonhosted.org/packages/24/ec/b4487e7341c9de16f0f7991e25647f48a536bd42458761681f27a7ec5df3/sqlean_py-3.50.4.3-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:2513b5250d9e097893abfa1cc5bceaff31dcbc6a44491e4a26cd52502a270ee6", size = 1077594, upload-time = "2025-08-30T12:52:09.474Z" },
-    { url = "https://files.pythonhosted.org/packages/57/2a/6d68325e75af83a8c6c49fc8abb545aae8e96f3a7c39e3ebea762274cdec/sqlean_py-3.50.4.3-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:f219ccdb8df1e4b57c7adb219409cb88776f33f745fbe723594beb72c4d2c407", size = 3042146, upload-time = "2025-08-30T12:52:11.117Z" },
-    { url = "https://files.pythonhosted.org/packages/ae/45/24ff5bcd6075d6849783950a7d6223602e5902cfc3ef746a39c96f7b968a/sqlean_py-3.50.4.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f4cd3ee13297faab90cad781e95acccf9f3c264a8d65322579a892249cf3f3ba", size = 3047740, upload-time = "2025-08-30T12:52:13.327Z" },
-]
+sdist = { url = "https://files.pythonhosted.org/packages/e7/a5/918f58242014a76d873ed7e4f8618fd3d3942d2cf1544324c45a757c2e14/sqlean.py-3.45.1.tar.gz", hash = "sha256:25fbf0a111856e0384dbc412156e2e688948525c7d8609dc3803512c70130740", size = 3216428, upload-time = "2024-02-06T09:50:42.624Z" }
 
 [[package]]
 name = "starlette"
