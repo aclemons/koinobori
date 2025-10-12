@@ -16,8 +16,8 @@ dependencies = [
     "yarl==1.22.0",
 ]
 
-[tool.uv]
-dev-dependencies = [
+[dependency-groups]
+dev = [
     "docker==7.1.0",
     "pyright==1.1.406",
     "pytest==8.4.2",
