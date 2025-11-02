@@ -24,7 +24,7 @@ dev = [
     "rich==14.2.0",
     "ruff-lsp==0.0.62",
     "ruff==0.14.3",
-    "uvicorn[standard]==0.37.0",
+    "uvicorn[standard]==0.38.0",
 ]
 
 [build-system]
