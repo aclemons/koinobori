@@ -195,6 +195,8 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/ee/43/3cecdc0349359e1a527cbf2e3e28e5f8f06d3343aaf82ca13437a9aa290f/greenlet-3.2.4-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:23768528f2911bcd7e475210822ffb5254ed10d71f4028387e5a99b4c6699671", size = 610497, upload-time = "2025-08-07T13:18:31.636Z" },
     { url = "https://files.pythonhosted.org/packages/b8/19/06b6cf5d604e2c382a6f31cafafd6f33d5dea706f4db7bdab184bad2b21d/greenlet-3.2.4-cp313-cp313-musllinux_1_1_aarch64.whl", hash = "sha256:00fadb3fedccc447f517ee0d3fd8fe49eae949e1cd0f6a611818f4f6fb7dc83b", size = 1121662, upload-time = "2025-08-07T13:42:41.117Z" },
     { url = "https://files.pythonhosted.org/packages/a2/15/0d5e4e1a66fab130d98168fe984c509249c833c1a3c16806b90f253ce7b9/greenlet-3.2.4-cp313-cp313-musllinux_1_1_x86_64.whl", hash = "sha256:d25c5091190f2dc0eaa3f950252122edbbadbb682aa7b1ef2f8af0f8c0afefae", size = 1149210, upload-time = "2025-08-07T13:18:24.072Z" },
+    { url = "https://files.pythonhosted.org/packages/1c/53/f9c440463b3057485b8594d7a638bed53ba531165ef0ca0e6c364b5cc807/greenlet-3.2.4-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:6e343822feb58ac4d0a1211bd9399de2b3a04963ddeec21530fc426cc121f19b", size = 1564759, upload-time = "2025-11-04T12:42:19.395Z" },
+    { url = "https://files.pythonhosted.org/packages/47/e4/3bb4240abdd0a8d23f4f88adec746a3099f0d86bfedb623f063b2e3b4df0/greenlet-3.2.4-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:ca7f6f1f2649b89ce02f6f229d7c19f680a6238af656f61e0115b24857917929", size = 1634288, upload-time = "2025-11-04T12:42:21.174Z" },
     { url = "https://files.pythonhosted.org/packages/0b/55/2321e43595e6801e105fcfdee02b34c0f996eb71e6ddffca6b10b7e1d771/greenlet-3.2.4-cp313-cp313-win_amd64.whl", hash = "sha256:554b03b6e73aaabec3745364d6239e9e012d64c68ccd0b8430c64ccc14939a8b", size = 299685, upload-time = "2025-08-07T13:24:38.824Z" },
 ]
 
@@ -281,7 +283,7 @@ requires-dist = [
     { name = "fastapi-slim", specifier = "==0.120.4" },
     { name = "mangum", specifier = "==0.19.0" },
     { name = "orjson", specifier = "==3.11.4" },
-    { name = "pydynamodb", extras = ["sqlalchemy"], specifier = "==0.7.0" },
+    { name = "pydynamodb", extras = ["sqlalchemy"], specifier = "==0.7.4" },
     { name = "setuptools", specifier = "==80.9.0" },
     { name = "structlog", specifier = "==25.5.0" },
     { name = "yarl", specifier = "==1.22.0" },
@@ -567,7 +569,7 @@ wheels = [
 
 [[package]]
 name = "pydynamodb"
-version = "0.7.0"
+version = "0.7.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "boto3" },
@@ -576,9 +578,9 @@ dependencies = [
     { name = "sqlean-py" },
     { name = "tenacity" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/0f/75/9d1871d3000ba7482ddb9e08fdcca1c192975a5ff5dd9ee9611a4ae23498/PyDynamoDB-0.7.0.tar.gz", hash = "sha256:4fc46119350c325e52e47a6155320cc8b4fde4a279e57e2e4040caf2b8427e09", size = 43805, upload-time = "2024-09-23T15:32:09.071Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/29/1e/e00250230f7c7ff34e63fe1f19b1f402379d7a2a6ec11fb658b18beda868/pydynamodb-0.7.4.tar.gz", hash = "sha256:b515bc7321e930a61f440694b78c02cc5490da0c854224862418cf292eb85bc1", size = 47372, upload-time = "2025-10-01T20:03:11.498Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c6/68/1e9fdc4a65cfc7c2d6434413d3e0d2779eae35090120d7d122e68816a2fd/PyDynamoDB-0.7.0-py3-none-any.whl", hash = "sha256:8ee5f5a5c61c1a580b67f686956030fda11359225f67d795fa0707ef3ec008ae", size = 57077, upload-time = "2024-09-23T15:32:06.984Z" },
+    { url = "https://files.pythonhosted.org/packages/9a/ff/c464f21cf95a37a280c48a4edf20767fc42498fbca616327bed8edac71b9/pydynamodb-0.7.4-py3-none-any.whl", hash = "sha256:f27a725506677754462aa03129e23ffad8e0e1fdf3ca876c95c5fa608750fba5", size = 60862, upload-time = "2025-10-01T20:03:10.156Z" },
 ]
 
 [package.optional-dependencies]
@@ -828,15 +830,9 @@ wheels = [
 
 [[package]]
 name = "sqlean-py"
-version = "3.50.4.5"
+version = "3.45.1"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/ec/61/5332f923ec20c0b3ae9b3cf05731049bd4d17714dce1dbbc69129264664e/sqlean_py-3.50.4.5.tar.gz", hash = "sha256:9764b565e7ab430ab6e9e43cb2816199c2b39926dffc93c212a52f0019278459", size = 3482387, upload-time = "2025-10-25T08:51:59.968Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/a3/9e/6dd74ea2f115c672730dbec642029e9283a95e5974b6e86dc7763c335f29/sqlean_py-3.50.4.5-cp313-cp313-macosx_10_15_x86_64.whl", hash = "sha256:89233ad3640b1442eaf2d44a07debd17e23a1bde48d15c9b77a423ce7823b6a2", size = 1159569, upload-time = "2025-10-25T08:51:48.459Z" },
-    { url = "https://files.pythonhosted.org/packages/2e/9c/95445eaf6a3bbae7fadd560cce5822ba5fbdac82e496719a0039cd9c46f9/sqlean_py-3.50.4.5-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:e63b246ceb0eb48d37abeada97b2a7695dfe79655b7a8285c001e5ad9e79711b", size = 1079676, upload-time = "2025-10-25T08:51:50.16Z" },
-    { url = "https://files.pythonhosted.org/packages/79/a2/8f001c4be191a7484e5830d97989331f3e3ffd6b991affcface3ee77c9b0/sqlean_py-3.50.4.5-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:3725a94c80a64740489aa5765f9c6d11fa428b7d557c53c2197d51305cbe70a8", size = 3054456, upload-time = "2025-10-25T08:51:51.339Z" },
-    { url = "https://files.pythonhosted.org/packages/a2/37/f02841a03d849a34371e62466bbc47b2a9557434b6508515352824d2ddf9/sqlean_py-3.50.4.5-cp313-cp313-manylinux_2_28_x86_64.whl", hash = "sha256:05eb8d758104339c8d8ecf99238e15bbf6ba07a572f770f1a92589d487a8282c", size = 3087194, upload-time = "2025-10-25T08:51:52.623Z" },
-]
+sdist = { url = "https://files.pythonhosted.org/packages/e7/a5/918f58242014a76d873ed7e4f8618fd3d3942d2cf1544324c45a757c2e14/sqlean.py-3.45.1.tar.gz", hash = "sha256:25fbf0a111856e0384dbc412156e2e688948525c7d8609dc3803512c70130740", size = 3216428, upload-time = "2024-02-06T09:50:42.624Z" }
 
 [[package]]
 name = "starlette"
