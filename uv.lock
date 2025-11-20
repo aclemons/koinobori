@@ -283,7 +283,7 @@ requires-dist = [
     { name = "fastapi-slim", specifier = "==0.120.4" },
     { name = "mangum", specifier = "==0.19.0" },
     { name = "orjson", specifier = "==3.11.4" },
-    { name = "pydynamodb", extras = ["sqlalchemy"], specifier = "==0.7.0" },
+    { name = "pydynamodb", extras = ["sqlalchemy"], specifier = "==0.7.6" },
     { name = "setuptools", specifier = "==80.9.0" },
     { name = "structlog", specifier = "==25.5.0" },
     { name = "yarl", specifier = "==1.22.0" },
@@ -569,7 +569,7 @@ wheels = [
 
 [[package]]
 name = "pydynamodb"
-version = "0.7.0"
+version = "0.7.6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "boto3" },
@@ -578,9 +578,9 @@ dependencies = [
     { name = "sqlean-py" },
     { name = "tenacity" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/0f/75/9d1871d3000ba7482ddb9e08fdcca1c192975a5ff5dd9ee9611a4ae23498/PyDynamoDB-0.7.0.tar.gz", hash = "sha256:4fc46119350c325e52e47a6155320cc8b4fde4a279e57e2e4040caf2b8427e09", size = 43805, upload-time = "2024-09-23T15:32:09.071Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c1/19/00e1a62ddf331e48f186b071a1ca396fa9c4eaa02acb72aa33ce2c296c06/pydynamodb-0.7.6.tar.gz", hash = "sha256:c5752f00ab8fce26abf1c9451d9b47d222fd4055a5801e1d0cf899618651eb38", size = 69640, upload-time = "2025-11-19T22:54:50.957Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c6/68/1e9fdc4a65cfc7c2d6434413d3e0d2779eae35090120d7d122e68816a2fd/PyDynamoDB-0.7.0-py3-none-any.whl", hash = "sha256:8ee5f5a5c61c1a580b67f686956030fda11359225f67d795fa0707ef3ec008ae", size = 57077, upload-time = "2024-09-23T15:32:06.984Z" },
+    { url = "https://files.pythonhosted.org/packages/1e/9a/d1ca9bb41b8e174015f2c1cb41569c12967c8eac48c57ef4a09f10e4b1f7/pydynamodb-0.7.6-py3-none-any.whl", hash = "sha256:5bf4e1819738498ceb3596f090b39103f3166a4b023e0bc747d5306ec06675ea", size = 62472, upload-time = "2025-11-19T22:54:49.659Z" },
 ]
 
 [package.optional-dependencies]

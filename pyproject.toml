@@ -9,7 +9,7 @@ dependencies = [
     "fastapi-slim==0.120.4",
     "mangum==0.19.0",
     "orjson==3.11.4",
-    "pydynamodb[sqlalchemy]==0.7.0",
+    "pydynamodb[sqlalchemy]==0.7.6",
     # removed in python 3.12, but pydynamodb needs it.
     "setuptools==80.9.0",
     "structlog==25.5.0",
