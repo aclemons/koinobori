@@ -23,7 +23,7 @@ dev = [
     "pytest==8.4.2",
     "rich==14.2.0",
     "ruff-lsp==0.0.62",
-    "ruff==0.14.6",
+    "ruff==0.14.10",
     "uvicorn[standard]==0.38.0",
 ]
 
