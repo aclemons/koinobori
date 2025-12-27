@@ -7,7 +7,7 @@ if TYPE_CHECKING:
     from fastapi import FastAPI
 
 
-def uvicorn_app() -> "FastAPI":
+def uvicorn_app() -> FastAPI:
     init_logging(mode="console")
 
     return build()

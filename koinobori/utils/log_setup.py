@@ -2,13 +2,13 @@ import contextlib
 import json
 import logging
 import logging.config
-from typing import TYPE_CHECKING, Any, Literal
+from typing import TYPE_CHECKING, Any, Literal, cast
 
 import orjson
 import structlog
 
 if TYPE_CHECKING:
-    from structlog.typing import Processor
+    from structlog.typing import ExceptionRenderer, Processor
 
 
 def init_logging(mode: Literal["console", "json"] = "console") -> None:
@@ -32,10 +32,11 @@ def init_logging(mode: Literal["console", "json"] = "console") -> None:
             processors.append(structlog.processors.StackInfoRenderer())
             processors.append(structlog.dev.set_exc_info)
 
+            untyped_formatter = structlog.dev.rich_traceback  # type: ignore[reportUnknownMemberType]
+            formatter = cast("ExceptionRenderer", untyped_formatter)
+
             processors.append(
-                structlog.dev.ConsoleRenderer(
-                    exception_formatter=structlog.dev.rich_traceback
-                )
+                structlog.dev.ConsoleRenderer(exception_formatter=formatter)
             )
         case "json":
             processors.append(structlog.processors.dict_tracebacks)
