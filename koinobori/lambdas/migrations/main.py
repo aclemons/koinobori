@@ -35,12 +35,15 @@ if (
     )
     or __name__ == "__main__"
 ):
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+
     init_logging(mode="json")
 
     def shutdown() -> None:
-        pass  # nothing to do for now
+        loop.run_until_complete(loop.shutdown_asyncgens())
+        loop.close()
 
-    loop = asyncio.get_event_loop()
     loop.add_signal_handler(signal.SIGTERM, shutdown)
 
     def lambda_handler(_event: LambdaEvent, _context: LambdaContext) -> dict[str, str]:
