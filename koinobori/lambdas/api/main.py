@@ -15,14 +15,17 @@ if any(
     os.environ.get(env_var) == f"{__name__}.lambda_handler"
     for env_var in ["_HANDLER", "ORIG_HANDLER"]
 ):
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+
     init_logging(mode="json")
 
     app = build()
 
     def shutdown() -> None:
-        pass  # nothing to do for now
+        loop.run_until_complete(loop.shutdown_asyncgens())
+        loop.close()
 
-    loop = asyncio.get_event_loop()
     loop.add_signal_handler(signal.SIGTERM, shutdown)
 
     mangum_handler = Mangum(app, lifespan="off")
