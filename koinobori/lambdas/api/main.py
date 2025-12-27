@@ -27,7 +27,5 @@ if any(
 
     mangum_handler = Mangum(app, lifespan="off")
 
-    def lambda_handler(
-        event: "LambdaEvent", context: "LambdaContext"
-    ) -> dict[str, Any]:
+    def lambda_handler(event: LambdaEvent, context: LambdaContext) -> dict[str, Any]:
         return mangum_handler(event, context)
