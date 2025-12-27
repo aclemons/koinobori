@@ -9,8 +9,6 @@ on:
 env:
   AWS_DEFAULT_REGION: eu-central-1
   SESSION_DURATION: 900
-  # renovate: datasource=docker depName=tonistiigi/binfmt versioning=loose
-  BINFMT_IMAGE: qemu-v9.2.0@sha256:ea2f0dd74e74f101df59f9a6b31d0960994060c7982a921cbceecee0f1841125
 
 concurrency:
   group: ${{ github.workflow }}
@@ -20,7 +18,7 @@ concurrency:
 jobs:
   docker:
     name: Build and push
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-24.04-arm
     permissions:
       id-token: write
       contents: read
@@ -31,11 +29,6 @@ jobs:
 
       - name: Compute git sha
         run: echo "DOCKER_IMAGE_VERSION=git$(git rev-parse --short HEAD)" >> "$GITHUB_ENV"
-
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@29109295f81e9208d7d86ff1c6c12d2833863392 # v3.6.0
-        with:
-          image: tonistiigi/binfmt:${{ env.BINFMT_IMAGE }}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3.12.0
