@@ -98,6 +98,15 @@
         "astral-sh/uv",
         "ghcr.io/astral-sh/uv"
       ]
+    },
+    {
+      "matchDatasources": [
+        "terraform-provider",
+        "terraform-module"
+      ],
+      "registryUrls": [
+        "https://registry.opentofu.org"
+      ]
     }
   ],
   "pre-commit": {
