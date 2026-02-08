@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = "==3.14.0"
 dependencies = [
     "alembic==1.18.3",
-    "fastapi-slim==0.128.0",
+    "fastapi-slim==0.128.4",
     "mangum==0.21.0",
     "orjson==3.11.7",
     "pydynamodb[sqlalchemy]==0.8.1",
