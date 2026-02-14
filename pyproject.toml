@@ -5,7 +5,7 @@ description = ""
 readme = "README.md"
 requires-python = "==3.14.0"
 dependencies = [
-    "alembic==1.18.3",
+    "alembic==1.18.4",
     "fastapi-slim==0.128.8",
     "mangum==0.21.0",
     "orjson==3.11.7",
