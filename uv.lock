@@ -167,7 +167,7 @@ wheels = [
 
 [[package]]
 name = "fastapi"
-version = "0.131.0"
+version = "0.129.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "annotated-doc" },
@@ -176,21 +176,9 @@ dependencies = [
     { name = "typing-extensions" },
     { name = "typing-inspection" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/91/32/158cbf685b7d5a26f87131069da286bf10fc9fbf7fc968d169d48a45d689/fastapi-0.131.0.tar.gz", hash = "sha256:6531155e52bee2899a932c746c9a8250f210e3c3303a5f7b9f8a808bfe0548ff", size = 369612, upload-time = "2026-02-22T16:38:11.252Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/f6/37/4aa7f6ce92745458b6ce0acd706dde2ac23a3bf341266b5311c904109f67/fastapi-0.129.1.tar.gz", hash = "sha256:6ccf0eca9644e0d6280115b4fc8281bf55ec5878d4d95572f7b2034ab15708ba", size = 369852, upload-time = "2026-02-21T13:10:03.335Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ff/94/b58ec24c321acc2ad1327f69b033cadc005e0f26df9a73828c9e9c7db7ce/fastapi-0.131.0-py3-none-any.whl", hash = "sha256:ed0e53decccf4459de78837ce1b867cd04fa9ce4579497b842579755d20b405a", size = 103854, upload-time = "2026-02-22T16:38:09.814Z" },
-]
-
-[[package]]
-name = "fastapi-slim"
-version = "0.129.1"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "fastapi" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/3e/0c/2e0bcbca77701b740d188f265724c7cabe94553432b9cddba86e45582efa/fastapi_slim-0.129.1.tar.gz", hash = "sha256:c88ac964c7a804b5a739d809b8450a2eeb110ea5f59c8d02273452644fc7098d", size = 5957, upload-time = "2026-02-21T13:10:02.128Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/1a/ae/026020a1c056978af8ea169edac7c96600c5515da06c8a9bc03fd91eb42d/fastapi_slim-0.129.1-py3-none-any.whl", hash = "sha256:8e6d734797dcfeec171714224e9cbbb1c4d34c861ed3fdd07800fe1cf8e8e862", size = 3231, upload-time = "2026-02-21T13:10:02.911Z" },
+    { url = "https://files.pythonhosted.org/packages/01/f9/f15d92bd6035d4f83be8b82dc527a3e7abc87648fda62cf8d1df344410a7/fastapi-0.129.1-py3-none-any.whl", hash = "sha256:022462403bc385b791df418d8f088eb0e8f1fe7cb8f625d682f5e9da6157cc83", size = 103226, upload-time = "2026-02-21T13:10:05.058Z" },
 ]
 
 [[package]]
@@ -273,7 +261,7 @@ version = "0.0.1"
 source = { editable = "." }
 dependencies = [
     { name = "alembic" },
-    { name = "fastapi-slim" },
+    { name = "fastapi" },
     { name = "mangum" },
     { name = "orjson" },
     { name = "pydynamodb", extra = ["sqlalchemy"] },
@@ -296,7 +284,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "alembic", specifier = "==1.18.4" },
-    { name = "fastapi-slim", specifier = "==0.129.1" },
+    { name = "fastapi", specifier = "==0.129.1" },
     { name = "mangum", specifier = "==0.21.0" },
     { name = "orjson", specifier = "==3.11.7" },
     { name = "pydynamodb", extras = ["sqlalchemy"], specifier = "==0.8.1" },
