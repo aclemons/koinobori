@@ -16,9 +16,10 @@ concurrency:
 
 
 jobs:
-  docker:
-    name: Build and push
+  deploy:
+    name: Deploy to dev environment
     runs-on: ubuntu-24.04-arm
+    environment: dev
     permissions:
       id-token: write
       contents: read
