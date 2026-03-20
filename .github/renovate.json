@@ -9,8 +9,8 @@
         "/^README\\.md/"
       ],
       "matchStrings": [
-        "You need uv (?<currentValue>.*)\\.\\n",
-        "astral\\.sh/uv/(?<currentValue>.*)/install\\.sh"
+        "You need uv (?<currentValue>[0-9.]+)\\.\\n",
+        "astral\\.sh/uv/(?<currentValue>[0-9.]+)/install\\.sh"
       ]
     },
     {
@@ -21,7 +21,7 @@
         "/^tf/\\.opentofu-version$/"
       ],
       "matchStrings": [
-        "(?<currentValue>.*)"
+        "(?<currentValue>[0-9.]+)"
       ]
     },
     {
@@ -32,7 +32,7 @@
         "/^tf/.*\\.tf$/"
       ],
       "matchStrings": [
-        "required_version\\s=\\s\"(?<currentValue>.*?)\""
+        "required_version\\s*=\\s*\"(?<currentValue>[0-9.]+)\""
       ]
     }
   ],
