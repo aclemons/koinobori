@@ -1,10 +1,8 @@
-import contextlib
 import tomllib
 from pathlib import Path
 
 import pytest
-
-import docker
+from python_on_whales import docker
 
 
 @pytest.fixture
@@ -37,16 +35,14 @@ def docker_python_version() -> str:
 
     image = lines[0].split("AS", 1)[0].strip().split(" ", 1)[-1]
 
-    with contextlib.closing(docker.from_env()) as docker_client:
-        log = docker_client.containers.run(
-            image=image,
-            entrypoint="/bin/bash",
-            command="-c 'python3 --version'",
-            remove=True,
-        )
+    log = docker.run(
+        image=image,
+        entrypoint="/bin/bash",
+        command=["-c", "python3 --version"],
+        remove=True,
+    )
 
-    assert isinstance(log, bytes)
-    return log.decode("utf-8").rstrip().split(" ", 1)[-1]
+    return log.rstrip().split(" ", 1)[-1]
 
 
 def test_python_versions_match(
