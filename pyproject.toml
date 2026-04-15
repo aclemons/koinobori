@@ -8,7 +8,7 @@ dependencies = [
     "alembic==1.18.4",
     "fastapi==0.135.2",
     "mangum==0.21.0",
-    "orjson==3.11.7",
+    "orjson==3.11.8",
     "pydynamodb[sqlalchemy]==0.8.1",
     # removed in python 3.12, but pydynamodb needs it.
     "setuptools==82.0.1",
