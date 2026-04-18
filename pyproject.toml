@@ -21,7 +21,7 @@ dev = [
     "python-on-whales==0.81.0",
     "pyright==1.1.408",
     "pytest==9.0.3",
-    "rich==14.3.4",
+    "rich==15.0.0",
     "ruff==0.15.11",
     "uvicorn[standard]==0.44.0",
 ]
