@@ -23,7 +23,7 @@ dev = [
     "pytest==9.0.3",
     "rich==15.0.0",
     "ruff==0.15.11",
-    "uvicorn[standard]==0.44.0",
+    "uvicorn[standard]==0.46.0",
 ]
 
 [build-system]
