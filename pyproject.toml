@@ -19,7 +19,7 @@ dependencies = [
 [dependency-groups]
 dev = [
     "python-on-whales==0.81.0",
-    "pyright==1.1.409",
+    "pyright==1.1.410",
     "pytest==9.0.3",
     "rich==15.0.0",
     "ruff==0.15.15",
