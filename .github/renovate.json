@@ -59,6 +59,18 @@
       ]
     },
     {
+      "description": "Disable Docker major updates for lambda base images",
+      "enabled": false,
+      "matchDepNames": [
+        "ecr-public.aws.com/lambda/java",
+        "ecr-public.aws.com/lambda/python",
+        "ecr-public.aws.com/lambda/provided"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ]
+    },
+    {
       "description": "`.python-version` is synced to the AWS lambda docker image version.",
       "enabled": false,
       "matchManagers": [
