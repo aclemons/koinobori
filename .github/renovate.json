@@ -62,7 +62,8 @@
       "description": "Disable Docker major/minor updates for lambda base images",
       "enabled": false,
       "matchDepNames": [
-        "ecr-public.aws.com/lambda/python"
+        "ecr-public.aws.com/lambda/python",
+        "public.ecr.aws/lambda/python"
       ],
       "matchUpdateTypes": [
         "major",
