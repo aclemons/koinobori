@@ -57,6 +57,7 @@ ignore = [
  "D", # disable docstring checks
  "COM812", # conflicts with ruff format
  "ISC001", # conflicts with ruff format
+ "CPY001", # won't annotate every file.
 ]
 
 [tool.ruff.lint.per-file-ignores]
