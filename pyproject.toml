@@ -7,7 +7,7 @@ requires-python = "==3.14.6"
 dependencies = [
     "alembic==1.19.1",
     "fastapi==0.141.1",
-    "mangum==0.21.0",
+    "mangum==0.22.0",
     "orjson==3.11.9",
     "pydynamodb[sqlalchemy]==0.8.2",
     # removed in python 3.12, but pydynamodb needs it.
