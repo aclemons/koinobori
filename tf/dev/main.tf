@@ -43,7 +43,7 @@ data "aws_iam_policy_document" "policy" {
       "dynamodb:UpdateItem",
     ]
     resources = [
-      "arn:aws:dynamodb:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:table/${local.migrations_table_name}",
+      "arn:aws:dynamodb:${data.aws_region.current.region}:${data.aws_caller_identity.current.account_id}:table/${local.migrations_table_name}",
     ]
   }
 }
@@ -71,6 +71,37 @@ resource "aws_ecr_repository" "koinobori" {
     Project = local.project_name
     Env     = local.env
   }
+}
+
+data "aws_iam_policy_document" "lambda_ecr_access" {
+  statement {
+    sid    = "LambdaECRImageRetrievalPolicy"
+    effect = "Allow"
+
+    principals {
+      type        = "Service"
+      identifiers = ["lambda.amazonaws.com"]
+    }
+
+    actions = [
+      "ecr:BatchGetImage",
+      "ecr:GetDownloadUrlForLayer",
+    ]
+
+    condition {
+      test     = "ArnLike"
+      variable = "aws:SourceArn"
+      values = [
+        "arn:aws:lambda:${data.aws_region.current.region}:${data.aws_caller_identity.current.account_id}:function:${local.api_function_name}",
+        "arn:aws:lambda:${data.aws_region.current.region}:${data.aws_caller_identity.current.account_id}:function:${local.migrations_function_name}",
+      ]
+    }
+  }
+}
+
+resource "aws_ecr_repository_policy" "lambda_ecr_access" {
+  repository = aws_ecr_repository.koinobori.name
+  policy     = data.aws_iam_policy_document.lambda_ecr_access.json
 }
 
 resource "aws_ecr_lifecycle_policy" "imapfilter" {
@@ -142,6 +173,7 @@ resource "aws_lambda_function" "api_lambda" {
 
   depends_on = [
     aws_cloudwatch_log_group.api_lambda,
+    aws_ecr_repository_policy.lambda_ecr_access,
   ]
 }
 
@@ -200,5 +232,6 @@ resource "aws_lambda_function" "migrations_lambda" {
 
   depends_on = [
     aws_cloudwatch_log_group.migrations_lambda,
+    aws_ecr_repository_policy.lambda_ecr_access,
   ]
 }
