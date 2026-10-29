@@ -20,7 +20,7 @@ dependencies = [
 dev = [
     "python-on-whales==0.81.0",
     "pyright==1.1.414",
-    "pytest==9.1.1",
+    "pytest==9.2.0",
     "rich==15.0.0",
     "ruff==0.17.2",
     "uvicorn[standard]==0.54.0",
